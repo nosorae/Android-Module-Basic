@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <NumberPicker
+        android:id="@+id/lotto_number_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/lotto_button_add"
+        android:text="@string/lotto_add_number"
+        app:layout_constraintTop_toBottomOf="@+id/lotto_number_picker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/lotto_button_clear"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/lotto_button_clear"
+        android:text="@string/lotto_clear_number"
+        app:layout_constraintTop_toBottomOf="@+id/lotto_number_picker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lotto_button_add"
+        app:layout_constraintTop_toTopOf="@+id/lotto_button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:id="@+id/lotto_linear_layout_nums"
+        app:layout_constraintTop_toBottomOf="@+id/lotto_button_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/lotto_text_view_num1"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:text="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@drawable/lotto_circle_blue"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lotto_text_view_num2"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:text="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@drawable/lotto_circle_yello"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lotto_text_view_num3"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:text="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@drawable/lotto_circle_gray"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lotto_text_view_num4"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:text="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@drawable/lotto_circle_green"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lotto_text_view_num5"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:text="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@drawable/lotto_circle_red"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/lotto_text_view_num6"
+            android:text=""
+            android:textStyle="bold"
+            android:textSize="18sp"
+            tools:text="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:background="@drawable/lotto_circle_blue"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/lotto_button_run"
+        android:text="@string/lotto_auto_producing"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

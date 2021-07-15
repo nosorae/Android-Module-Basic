@@ -1,3 +1,18 @@
 <resources>
+    <!--BIM-->
+    <string name="title_bmi">BIM</string>
+    <string name="bmi_heigth">신장</string>
+    <string name="bmi_weight">체중</string>
+
+    <!--Lotto-->
+    <string name="title_lotto">Lotto</string>
+    <string name="lotto_add_number">번호 추가하기</string>
+    <string name="lotto_clear_number">초기화</string>
+    <string name="lotto_auto_producing">자동 생성 시작</string>
+
+    <!--Diary-->
+    <string name="title_diary">Diary</string>
+
+
     <string name="app_name">Module-Basic</string>
 </resources>

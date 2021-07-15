@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--안드로이드 os에 이 앱이 실제로 어떻게 동작하는지, 어떤 구조로 돼있는지 설명하는 파일, 권한을 명시하기도 함-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nosorae.module_basic">
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ModuleBasic">
+        <activity android:name=".p1_bmi.BMI"></activity>
+        <activity android:name=".p1_bmi.BMIResultActivity"></activity>
+        <activity android:name=".p2_lotto.Lotto"></activity>
+        <activity android:name=".p3_diary.Diary"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
