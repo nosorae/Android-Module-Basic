@@ -4,13 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import nosorae.module_basic.p1_bmi.BMI
-import nosorae.module_basic.p3_diary.Diary
-import nosorae.module_basic.p2_lotto.Lotto
+import nosorae.module_basic.p1_bmi.BMIActivity
+import nosorae.module_basic.p3_diary.DiaryActivity
+import nosorae.module_basic.p2_lotto.LottoActivity
 
 // TODO https://kotlinlang.org/ 참고해서 코틀린언어 공부
 // 그래들은 안드로이드 앱을 빌드하는데 도움을 주는 것
 //액티비티는 도화지 개념 이 도화지의 그림이 layout이 선언되어있는 파일이 R파일
+//중복 변수는 밖으로 빼고, 중복기능은 함수로 만든다.
+//onCreate 호출 시점은 뷰가 완전히 그려졌을 시점
 
 class MainActivity : AppCompatActivity() {
     //액티비티가 실행됐을 때 가장 먼저 호출되는 게 onCreate함수
@@ -22,13 +24,13 @@ class MainActivity : AppCompatActivity() {
         val button_diary = findViewById<Button>(R.id.button_diary)
 
         button_bmi.setOnClickListener {
-            startActivity(Intent(this, BMI::class.java))
+            startActivity(Intent(this, BMIActivity::class.java))
         }
         button_lotto.setOnClickListener {
-            startActivity(Intent(this, Lotto::class.java))
+            startActivity(Intent(this, LottoActivity::class.java))
         }
         button_diary.setOnClickListener {
-            startActivity(Intent(this, Diary::class.java))
+            startActivity(Intent(this, DiaryActivity::class.java))
         }
     }
 }

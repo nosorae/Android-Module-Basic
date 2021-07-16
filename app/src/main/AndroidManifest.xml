@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ModuleBasic">
-        <activity android:name=".p1_bmi.BMI"></activity>
-        <activity android:name=".p1_bmi.BMIResultActivity"></activity>
-        <activity android:name=".p2_lotto.Lotto"></activity>
-        <activity android:name=".p3_diary.Diary"></activity>
+
+        <activity android:name=".p1_bmi.BMIActivity" />
+        <activity android:name=".p1_bmi.BMIResultActivity" />
+        <activity android:name=".p2_lotto.LottoActivity" />
+
+        <activity android:name=".p3_diary.DiaryActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+        <activity android:name=".p3_diary.DiaryResultActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".p1_bmi.BMI">
+    tools:context=".p1_bmi.BMIActivity">
     <!--LinearLayout의 필수 속성-->
     <!--textSize에 sp단위를 쓰는 이유 : 사용자 설정에 맞게 크기를 조절해주기 때문이다. -->
     <TextView
