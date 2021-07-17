@@ -7,6 +7,8 @@ import android.widget.Button
 import nosorae.module_basic.p1_bmi.BMIActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
+import nosorae.module_basic.p4_calculator.CalculatorActivity
+import nosorae.module_basic.p5_picture_frame.PictureFrameActivity
 
 // TODO https://kotlinlang.org/ 참고해서 코틀린언어 공부
 // 그래들은 안드로이드 앱을 빌드하는데 도움을 주는 것
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         val button_bmi = findViewById<Button>(R.id.button_bmi) //레이아웃의 컴포넌트를 R파일의 id로 가져와서
         val button_lotto = findViewById<Button>(R.id.button_lotto)
         val button_diary = findViewById<Button>(R.id.button_diary)
+        val button_calculator = findViewById<Button>(R.id.button_calculator)
+        val button_picture_frame = findViewById<Button>(R.id.button_picture_frame)
 
         button_bmi.setOnClickListener {
             startActivity(Intent(this, BMIActivity::class.java))
@@ -31,6 +35,14 @@ class MainActivity : AppCompatActivity() {
         }
         button_diary.setOnClickListener {
             startActivity(Intent(this, DiaryActivity::class.java))
+        }
+
+        button_calculator.setOnClickListener {
+            startActivity(Intent(this, CalculatorActivity::class.java))
+        }
+
+        button_picture_frame.setOnClickListener {
+            startActivity(Intent(this, PictureFrameActivity::class.java))
         }
     }
 }

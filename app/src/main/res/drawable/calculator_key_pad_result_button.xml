@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple android:color="@color/calculator_button_press_green"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <shape>
+            <solid android:color="@color/calculator_button_green"/>
+            <stroke android:color="@color/calculator_button_press_gray"
+                android:width="1dp"/>
+            <corners android:radius="100dp"/>
+        </shape>
+    </item>
+
+
+</ripple>

@@ -13,6 +13,40 @@
     <!--Diary-->
     <string name="title_diary">Secret Diary</string>
 
+    <!--Calculator-->
+    <string name="title_calculator">Calculator</string>
+    <string name="calculator_clear">C</string>
+    <string name="calculator_equal">=</string>
+    <string name="calculator_plus">+</string>
+    <string name="calculator_minus">-</string>
+    <string name="calculator_multiply">*</string>
+    <string name="calculator_divide">/</string>
+    <string name="calculator_modulus">%</string>
+    <string name="calculator_bracket">()</string>
+    <string name="calculator_point">.</string>
+    <string name="calculator_num_1">1</string>
+    <string name="calculator_num_2">2</string>
+    <string name="calculator_num_3">3</string>
+    <string name="calculator_num_4">4</string>
+    <string name="calculator_num_5">5</string>
+    <string name="calculator_num_6">6</string>
+    <string name="calculator_num_7">7</string>
+    <string name="calculator_num_8">8</string>
+    <string name="calculator_num_9">9</string>
+    <string name="calculator_close_history">CLOSE</string>
+    <string name="calculator_delete_history">DELETE</string>
+
+    <!-- Picture Frame -->
+    <string name="title_picture_frame">Electronic Picture Frame</string>
+    <string name="picture_frame_add"></string>
+    <string name="picture_frame_run"></string>
+    <string name="picture_frame_"></string>
+    <string name="picture_frame_"></string>
+    <string name="picture_frame_"></string>
+    <string name="picture_frame_"></string>
+    <string name="picture_frame_"></string>
+
+
 
     <string name="app_name">Module-Basic</string>
 </resources>

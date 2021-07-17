@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nosorae.module_basic">
 
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,10 +15,18 @@
         <activity android:name=".p1_bmi.BMIActivity" />
         <activity android:name=".p1_bmi.BMIResultActivity" />
         <activity android:name=".p2_lotto.LottoActivity" />
+        <activity
+            android:name=".p3_diary.DiaryActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+        <activity
+            android:name=".p3_diary.DiaryResultActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+        <activity
+            android:name=".p4_calculator.CalculatorActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
-        <activity android:name=".p3_diary.DiaryActivity"
-            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
-        <activity android:name=".p3_diary.DiaryResultActivity"
+        <activity
+            android:name=".p5_picture_frame.PictureFrameActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>

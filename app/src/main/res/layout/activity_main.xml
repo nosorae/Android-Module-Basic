@@ -34,6 +34,18 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="@string/title_diary" />
+
+         <Button
+             android:id="@+id/button_calculator"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_calculator" />
+
+         <Button
+             android:id="@+id/button_picture_frame"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_picture_frame" />
       </LinearLayout>
    </ScrollView>
 

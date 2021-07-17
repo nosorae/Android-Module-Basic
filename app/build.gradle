@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'// Room 사용에 필요, 아래 dependency 에 kapt "androidx.room:room-compiler:2.2.6", implementation "androidx.room:room-runtime:2.3.0"
+
 }
 
 android {
@@ -42,4 +44,7 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation "androidx.room:room-runtime:2.3.0" //런타임에 사용
+    kapt "androidx.room:room-compiler:2.3.0" // Room 컴파일러
 }

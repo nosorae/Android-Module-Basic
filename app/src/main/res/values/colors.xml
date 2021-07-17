@@ -10,4 +10,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="calculator_button_press_gray">#e2e2e2</color>
+    <color name="calculator_button_press_green">#618c2f</color>
+    <color name="calculator_button_gray">#f5f5f5</color>
+    <color name="calculator_button_green">#888c2f</color>
+    <color name="calculator_background_white">#fcfcfc</color>
+    <color name="calculator_text_gray">#555555</color>
+    <color name="calculator_text_green">#7aaf3b</color>
+
+
 </resources>
