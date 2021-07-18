@@ -38,13 +38,13 @@
 
     <!-- Picture Frame -->
     <string name="title_picture_frame">Electronic Picture Frame</string>
-    <string name="picture_frame_add"></string>
-    <string name="picture_frame_run"></string>
-    <string name="picture_frame_"></string>
-    <string name="picture_frame_"></string>
-    <string name="picture_frame_"></string>
-    <string name="picture_frame_"></string>
-    <string name="picture_frame_"></string>
+    <string name="picture_frame_add">사진 추가하기</string>
+    <string name="picture_frame_run">전자액자 실행하기</string>
+
+    <!-- Pomodoro -->
+    <string name="title_pomodoro_timer">PPomodoro Timer</string>
+    <string name="pomodoro_default_time">00</string>
+
 
 
 

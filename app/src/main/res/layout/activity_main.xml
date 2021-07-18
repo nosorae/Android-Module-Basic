@@ -46,6 +46,12 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="@string/title_picture_frame" />
+
+         <Button
+             android:id="@+id/button_pomodoro"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_pomodoro_timer" />
       </LinearLayout>
    </ScrollView>
 

@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         val button_diary = findViewById<Button>(R.id.button_diary)
         val button_calculator = findViewById<Button>(R.id.button_calculator)
         val button_picture_frame = findViewById<Button>(R.id.button_picture_frame)
+        val button_pomodoro = findViewById<Button>(R.id.pomodoro)
 
         button_bmi.setOnClickListener {
             startActivity(Intent(this, BMIActivity::class.java))

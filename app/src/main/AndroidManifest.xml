@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nosorae.module_basic">
 
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -27,7 +27,17 @@
 
         <activity
             android:name=".p5_picture_frame.PictureFrameActivity"
-            android:theme="@style/Theme.ModuleBasic.NoActionBar"></activity>
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
+        <activity
+            android:name=".p5_picture_frame.PictureFrameResultActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
+        <activity
+            android:name=".p6_pomodoro.PomodoroActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
