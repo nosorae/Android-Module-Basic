@@ -137,6 +137,7 @@ class CalculatorActivity : AppCompatActivity() {
             else -> {
                 expressionTextView.append(" $operator")
             }
+
         }
 
         val ssb = SpannableStringBuilder(expressionTextView.text)

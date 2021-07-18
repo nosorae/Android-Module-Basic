@@ -43,7 +43,8 @@
 
     <!-- Pomodoro -->
     <string name="title_pomodoro_timer">PPomodoro Timer</string>
-    <string name="pomodoro_default_time">00</string>
+    <string name="pomodoro_default_minutes">00`</string>
+    <string name="pomodoro_default_second">00</string>
 
 
 

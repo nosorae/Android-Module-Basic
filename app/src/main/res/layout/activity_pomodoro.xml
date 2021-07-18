@@ -2,41 +2,60 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/pomodoro_red"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:src="@drawable/img_tomato_stem"
+        app:layout_constraintBottom_toTopOf="@+id/pomodoro_text_view_minutes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/pomodoro_text_view_minutes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
+        android:text="@string/pomodoro_default_minutes"
+        android:textColor="@color/white"
+        android:textSize="120sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/pomodoro_text_view_seconds"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="00" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/pomodoro_text_view_seconds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@id/pomodoro_text_view_minutes"
+        android:text="@string/pomodoro_default_second"
+        android:textColor="@color/white"
+        android:textSize="70sp"
         app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/pomodoro_text_view_minutes"
-        app:layout_constraintTop_toTopOf="@id/pomodoro_text_view_minutes"
-        android:text="00" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/pomodoro_text_view_minutes" />
 
     <SeekBar
         android:id="@+id/pomodoro_seek_bar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:max="60"
+        android:layout_marginHorizontal="20dp"
+        android:progressDrawable="@color/transparent"
+        android:thumb="@drawable/ic_pomodoro_thumb"
+        android:tickMark="@drawable/pomodoro_tick_mark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pomodoro_text_view_minutes"/>
+        app:layout_constraintTop_toBottomOf="@+id/pomodoro_text_view_minutes" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

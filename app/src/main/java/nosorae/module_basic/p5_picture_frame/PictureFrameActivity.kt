@@ -42,6 +42,8 @@ class PictureFrameActivity : AppCompatActivity() {
     private val runPhotoFrameButton: Button by lazy {
         findViewById<Button>(R.id.picture_frame_button_run)
     }
+
+
     private val imageViewList: List<ImageView> by lazy {
         mutableListOf<ImageView>().apply {
             add(findViewById<ImageView>(R.id.photo_frame_image_view_1))
