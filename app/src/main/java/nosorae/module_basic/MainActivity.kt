@@ -10,6 +10,7 @@ import nosorae.module_basic.p2_lotto.LottoActivity
 import nosorae.module_basic.p4_calculator.CalculatorActivity
 import nosorae.module_basic.p5_picture_frame.PictureFrameActivity
 import nosorae.module_basic.p6_pomodoro.PomodoroActivity
+import nosorae.module_basic.p7_recorder.RecorderActivity
 
 // TODO https://kotlinlang.org/ 참고해서 코틀린언어 공부
 // 그래들은 안드로이드 앱을 빌드하는데 도움을 주는 것
@@ -28,6 +29,8 @@ class MainActivity : AppCompatActivity() {
         val button_calculator = findViewById<Button>(R.id.button_calculator)
         val button_picture_frame = findViewById<Button>(R.id.button_picture_frame)
         val button_pomodoro = findViewById<Button>(R.id.button_pomodoro)
+        val button_recorder = findViewById<Button>(R.id.button_recorder)
+
 
         button_bmi.setOnClickListener {
             startActivity(Intent(this, BMIActivity::class.java))
@@ -49,6 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         button_pomodoro.setOnClickListener {
             startActivity(Intent(this, PomodoroActivity::class.java))
+        }
+
+        button_recorder.setOnClickListener {
+            startActivity(Intent(this, RecorderActivity::class.java))
         }
     }
 }

@@ -46,7 +46,10 @@
     <string name="pomodoro_default_minutes">00`</string>
     <string name="pomodoro_default_second">00</string>
 
-
+    <!-- Recorder -->
+    <string name="title_recorder">Recorder</string>
+    <string name="recorder_default_play_time">00:00</string>
+    <string name="recorder_reset">RESET</string>
 
 
     <string name="app_name">Module-Basic</string>

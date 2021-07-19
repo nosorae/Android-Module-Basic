@@ -52,6 +52,12 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:text="@string/title_pomodoro_timer" />
+
+         <Button
+             android:id="@+id/button_recorder"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_recorder" />
       </LinearLayout>
    </ScrollView>
 
