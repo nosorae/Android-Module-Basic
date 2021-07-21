@@ -51,6 +51,11 @@
     <string name="recorder_default_play_time">00:00</string>
     <string name="recorder_reset">RESET</string>
 
+    <!-- Web -->
+    <string name="title_web">Web</string>
+
+    <string name="title_push">Push Notification</string>
+
 
     <string name="app_name">Module-Basic</string>
 </resources>

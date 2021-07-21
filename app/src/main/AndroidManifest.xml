@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="nosorae.module_basic">
-    <!-- P5 Picture Frame -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- P7 Recorder -->
-    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- P5 Picture Frame -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- P7 Recorder -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- P8 Web -->
 
     <application
         android:allowBackup="true"
@@ -11,8 +12,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.ModuleBasic">
-        <activity android:name=".p8_web.WebActivity"></activity>
+
         <activity android:name=".p1_bmi.BMIActivity" />
         <activity android:name=".p1_bmi.BMIResultActivity" />
         <activity android:name=".p2_lotto.LottoActivity" />
@@ -38,6 +40,13 @@
         <activity
             android:name=".p7_recorder.RecorderActivity"
             android:theme="@style/Theme.ModuleBasic.Recorder" />
+
+        <activity android:name=".p8_web.WebActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+
+        <activity android:name=".p9_push.PushActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
