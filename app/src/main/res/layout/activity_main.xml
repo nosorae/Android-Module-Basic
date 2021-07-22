@@ -71,6 +71,12 @@
              android:layout_height="wrap_content"
              android:text="@string/title_push" />
 
+         <Button
+             android:id="@+id/button_quote"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_quote" />
+
       </LinearLayout>
    </ScrollView>
 

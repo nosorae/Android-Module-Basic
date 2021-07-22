@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/item_quote_text_view_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:ellipsize="end"
+        android:gravity="end|center_vertical"
+        android:maxLines="6"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/item_quote_text_view_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="나는 생각한다 고로 나는 존재한다." />
+
+    <TextView
+        android:id="@+id/item_quote_text_view_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="end|center_vertical"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/item_quote_text_view_content"
+        app:layout_constraintStart_toStartOf="@+id/item_quote_text_view_content"
+        app:layout_constraintTop_toBottomOf="@id/item_quote_text_view_content"
+        tools:text="데카르트" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

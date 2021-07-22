@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import nosorae.module_basic.p10_wise.QuoteActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         val button_recorder = findViewById<Button>(R.id.button_recorder)
         val button_web = findViewById<Button>(R.id.button_web)
         val button_push = findViewById<Button>(R.id.button_push)
+        val button_quote = findViewById<Button>(R.id.button_quote)
 
 
         button_bmi.setOnClickListener {
@@ -66,6 +68,9 @@ class MainActivity : AppCompatActivity() {
         }
         button_push.setOnClickListener {
             startActivity(Intent(this, PushActivity::class.java))
+        }
+        button_quote.setOnClickListener {
+            startActivity(Intent(this, QuoteActivity::class.java))
         }
     }
 }

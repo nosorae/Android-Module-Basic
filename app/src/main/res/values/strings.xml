@@ -56,6 +56,8 @@
 
     <string name="title_push">Push Notification</string>
 
+    <string name="title_quote">Today`s Quote</string>
+
 
     <string name="app_name">Module-Basic</string>
 </resources>
