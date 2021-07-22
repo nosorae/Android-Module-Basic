@@ -48,8 +48,11 @@
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
         <activity
-            android:name=".p10_wise.QuoteActivity"
+            android:name=".p10_quote.QuoteActivity"
             android:theme="@style/Theme.ModuleBasic.Quote" />
+
+        <activity android:name=".p11_alarm.AlarmActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
 
 
         <activity android:name=".MainActivity">
@@ -67,6 +70,9 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <receiver android:name=".p11_alarm.AlarmReceiver"
+            android:exported="false"/>
 
 
     </application>

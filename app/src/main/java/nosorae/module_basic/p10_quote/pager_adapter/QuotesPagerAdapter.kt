@@ -1,4 +1,4 @@
-package nosorae.module_basic.p10_wise.pager_adapter
+package nosorae.module_basic.p10_quote.pager_adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import nosorae.module_basic.R
-import nosorae.module_basic.p10_wise.Quote
+import nosorae.module_basic.p10_quote.Quote
 
 class QuotesPagerAdapter(
     private val quotes: List<Quote>,

@@ -1,4 +1,4 @@
-package nosorae.module_basic.p10_wise
+package nosorae.module_basic.p10_quote
 
 data class Quote(
     val quote: String,

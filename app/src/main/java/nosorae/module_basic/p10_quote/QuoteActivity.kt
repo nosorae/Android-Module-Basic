@@ -1,4 +1,4 @@
-package nosorae.module_basic.p10_wise
+package nosorae.module_basic.p10_quote
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.ktx.remoteConfig
 import com.google.firebase.remoteconfig.ktx.remoteConfigSettings
 import nosorae.module_basic.R
-import nosorae.module_basic.p10_wise.pager_adapter.QuotesPagerAdapter
+import nosorae.module_basic.p10_quote.pager_adapter.QuotesPagerAdapter
 import org.json.JSONArray
 import org.json.JSONObject
 import kotlin.math.absoluteValue
