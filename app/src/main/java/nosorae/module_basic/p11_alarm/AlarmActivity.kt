@@ -25,7 +25,7 @@ import java.util.*
  * Notification 사용
  * Broadcast Receiver 사용
  * -> 시스템에서 일어나는 작업 들(예. 기기 켜짐 여부, 배터리 잔량, 와이파이 켜짐 여부)이 일어날 때마다 전파해주는데,
- * -> 그걸 Broadcast Receiver 로 수신한다는 기능능
+ * -> 그걸 Broadcast Receiver 로 수신한다는 기능
  * -> 꼭 시스템 작업 뿐만 아니라 다른 앱으로 notification 하건 다른 앱의 작업을 수신해서 우리앱에서 작업을 처리할 수 있다.
  * Background 작업
  * -> 필요한 이유? ~분 뒤에 알림해줘야하는데 앱이 그동안 살아있을 거라는 보장이 없기 때문에 백그라운드 작업이 필요하다.

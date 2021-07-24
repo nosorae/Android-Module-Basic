@@ -3,6 +3,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'kotlin-android'
     id 'kotlin-kapt'// Room 사용에 필요, 아래 dependency 에 kapt "androidx.room:room-compiler:2.2.6", implementation "androidx.room:room-runtime:2.3.0"
+    id 'kotlin-parcelize'
 
 }
 
@@ -33,6 +34,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    // p12 Book View Binding 활성화
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -53,6 +58,13 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:28.2.1') // p9 push
     implementation 'com.google.firebase:firebase-analytics-ktx' // p9 push
-    implementation 'com.google.firebase:firebase-messaging-ktx'
-    implementation 'com.google.firebase:firebase-config-ktx'
+    implementation 'com.google.firebase:firebase-messaging-ktx' // p9 push
+    implementation 'com.google.firebase:firebase-config-ktx' // p10 quote
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' //p12 library
+    // 서버에서 가져온 String 형태의 json 을 gson 으로 변환하는 걸 도와주는 gson 라이브러리도 추가
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //p12 library
+    implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' //p12 library 강의에서는 이건 안했다.
+
 }

@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- P5 Picture Frame -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- P7 Recorder -->
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- p8 Web, p12 Book -->
 
     <application
         android:allowBackup="true"
@@ -52,6 +52,11 @@
             android:theme="@style/Theme.ModuleBasic.Quote" />
 
         <activity android:name=".p11_alarm.AlarmActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+
+        <activity android:name=".p12_book.BookActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+        <activity android:name=".p12_book.BookDetailActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
 
 

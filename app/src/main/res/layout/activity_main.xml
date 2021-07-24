@@ -83,6 +83,12 @@
              android:layout_height="wrap_content"
              android:text="@string/title_alarm" />
 
+         <Button
+             android:id="@+id/button_book"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_book" />
+
       </LinearLayout>
    </ScrollView>
 

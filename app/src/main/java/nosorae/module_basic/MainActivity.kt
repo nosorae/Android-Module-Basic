@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import nosorae.module_basic.p10_quote.QuoteActivity
 import nosorae.module_basic.p11_alarm.AlarmActivity
+import nosorae.module_basic.p12_book.BookActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         val button_push = findViewById<Button>(R.id.button_push)
         val button_quote = findViewById<Button>(R.id.button_quote)
         val button_alarm = findViewById<Button>(R.id.button_alarm)
+        val button_book = findViewById<Button>(R.id.button_book)
 
 
         button_bmi.setOnClickListener {
@@ -76,6 +78,12 @@ class MainActivity : AppCompatActivity() {
         }
         button_alarm.setOnClickListener {
             startActivity(Intent(this, AlarmActivity::class.java))
+        }
+        startProject(button_book, BookActivity::class.java)
+    }
+    private fun startProject(button: Button, activity: Class<*>) {
+        button.setOnClickListener {
+            startActivity(Intent(this, activity))
         }
     }
 }
