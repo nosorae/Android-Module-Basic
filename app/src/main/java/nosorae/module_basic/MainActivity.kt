@@ -1,15 +1,17 @@
 package nosorae.module_basic
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import nosorae.module_basic.databinding.ActivityMainBinding
 import nosorae.module_basic.p10_quote.QuoteActivity
 import nosorae.module_basic.p11_alarm.AlarmActivity
 import nosorae.module_basic.p12_book.BookActivity
+import nosorae.module_basic.p13_tinder.TinderActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
-import nosorae.module_basic.p3_diary.DiaryActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
+import nosorae.module_basic.p3_diary.DiaryActivity
 import nosorae.module_basic.p4_calculator.CalculatorActivity
 import nosorae.module_basic.p5_picture_frame.PictureFrameActivity
 import nosorae.module_basic.p6_pomodoro.PomodoroActivity
@@ -25,9 +27,11 @@ import nosorae.module_basic.p9_push.PushActivity
 
 class MainActivity : AppCompatActivity() {
     //액티비티가 실행됐을 때 가장 먼저 호출되는 게 onCreate함수
+    private lateinit var binding: ActivityMainBinding // p12 부터 뷰바인딩 추가
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main) // R파일에서 레이아웃을 가져와서 연결해준다.
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root) // R파일에서 레이아웃을 가져와서 연결해준다.
         val button_bmi = findViewById<Button>(R.id.button_bmi) //레이아웃의 컴포넌트를 R파일의 id로 가져와서
         val button_lotto = findViewById<Button>(R.id.button_lotto)
         val button_diary = findViewById<Button>(R.id.button_diary)
@@ -39,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         val button_push = findViewById<Button>(R.id.button_push)
         val button_quote = findViewById<Button>(R.id.button_quote)
         val button_alarm = findViewById<Button>(R.id.button_alarm)
-        val button_book = findViewById<Button>(R.id.button_book)
+
 
 
         button_bmi.setOnClickListener {
@@ -79,7 +83,8 @@ class MainActivity : AppCompatActivity() {
         button_alarm.setOnClickListener {
             startActivity(Intent(this, AlarmActivity::class.java))
         }
-        startProject(button_book, BookActivity::class.java)
+        startProject(binding.buttonBook, BookActivity::class.java)
+        startProject(binding.buttonTinder, TinderActivity::class.java)
     }
     private fun startProject(button: Button, activity: Class<*>) {
         button.setOnClickListener {
@@ -107,4 +112,5 @@ Gradle Scripts
 리포맷 코드 : ctrl + alt + l
 빌드 : shift + f10
 자동 import : alt + enter
+함수만들기 Extract Function : 범위지정 -> ctrl + alt + m (우클릭 -> Refactor -> Function..)
  */

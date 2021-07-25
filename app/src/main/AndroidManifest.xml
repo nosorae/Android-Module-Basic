@@ -51,12 +51,47 @@
             android:name=".p10_quote.QuoteActivity"
             android:theme="@style/Theme.ModuleBasic.Quote" />
 
-        <activity android:name=".p11_alarm.AlarmActivity"
+        <activity
+            android:name=".p11_alarm.AlarmActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
+        <activity
+            android:name=".p12_book.BookActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+        <activity
+            android:name=".p12_book.BookDetailActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
+        <activity
+            android:name=".p13_tinder.TinderActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+        <activity
+            android:name=".p13_tinder.TinderLoginActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter><action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".p13_tinder.TinderLikeActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
 
-        <activity android:name=".p12_book.BookActivity"
-            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
-        <activity android:name=".p12_book.BookDetailActivity"
+        <activity android:name=".p13_tinder.TinderMatchedUserActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
 
 

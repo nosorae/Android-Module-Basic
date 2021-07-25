@@ -89,6 +89,12 @@
              android:layout_height="wrap_content"
              android:text="@string/title_book" />
 
+         <Button
+             android:id="@+id/button_tinder"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_tinder" />
+
       </LinearLayout>
    </ScrollView>
 

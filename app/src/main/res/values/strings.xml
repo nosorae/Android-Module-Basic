@@ -66,6 +66,24 @@
     <string name="title_book">Book</string>
     <string name="book_save_review">저장하기</string>
 
+    <string name="title_tinder">Tinder</string>
+    <string name="tinder_match_list">매치 리스트 보기</string>
+    <string name="tinder_no_card">매칭할 카드가 없습니다.</string>
+    <string name="tinder_log_out">로그아웃 하기</string>
+    <string name="tinder_sign_in">회원가입</string>
+    <string name="tinder_log_in">로그인</string>
+    <string name="tinder_log_in_with_facebook">Continue with Facebook</string>
+    <string name="facebook_app_id">584373109636939</string>
+    <string name="fb_login_protocol_scheme">fb584373109636939</string>
+    <string name="tinder_write_name">이름을 입력해주세요</string>
+    <string name="tinder_like">LIKE</string>
+    <string name="tinder_dislike">DISLIKE</string>
+
+
+
 
     <string name="app_name">Module-Basic</string>
+
+
+
 </resources>

@@ -67,4 +67,14 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' //p12 library 강의에서는 이건 안했다.
 
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-database-ktx'
+    implementation 'com.facebook.android:facebook-login:8.2.0' // p13 facebook login
+    implementation 'com.facebook.android:facebook-android-sdk:4.42.0' // 이건 내가 그냥 추가한 거
+    implementation "com.yuyakaido.android:card-stack-view:2.3.4" // p13
+
+
+
+
+
 }
