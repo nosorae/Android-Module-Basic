@@ -11,10 +11,11 @@ import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import nosorae.module_basic.databinding.ActivityTinderMatchBinding
-import nosorae.module_basic.p13_tinder.DBKey.Companion.LIKED_BY
-import nosorae.module_basic.p13_tinder.DBKey.Companion.MATCHED
-import nosorae.module_basic.p13_tinder.DBKey.Companion.NAME
-import nosorae.module_basic.p13_tinder.DBKey.Companion.USERS
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.LIKED_BY
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.MATCHED
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.NAME
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.USERS
+import nosorae.module_basic.p13_tinder.adapter.MatchedUserAdapter
 import nosorae.module_basic.p13_tinder.model.CardItem
 
 class TinderMatchedUserActivity: AppCompatActivity() {

@@ -73,6 +73,8 @@ dependencies {
     implementation 'com.facebook.android:facebook-android-sdk:4.42.0' // 이건 내가 그냥 추가한 거
     implementation "com.yuyakaido.android:card-stack-view:2.3.4" // p13
 
+    implementation 'com.google.firebase:firebase-storage-ktx'
+
 
 
 

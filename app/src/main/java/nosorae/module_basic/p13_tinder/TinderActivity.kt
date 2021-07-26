@@ -36,7 +36,7 @@ import nosorae.module_basic.databinding.ActivityTinderBinding
  *  project-info 에 "firebase_url": "https://android-module-fast-campus-default-rtdb.firebaseio.com" 이 추가됨을 확인
  *  json 형식으로 저장된다. child 의 연속으로 데이터 저장 조회를 한다. 없으면 자동으로 실시간으로 만든다. Firebase.database.reference 는 최상위의 레퍼런스이다.
  *  updateChildren(mutableMapOf()~) 또는 setValue 로 저장
- *  addListenerForSingleValueEvent 즉시성으로 한번만 불러온다??, addChildEventListener 전체 차일드에 대한 체인지를 다 보게됨
+ *  addListenerForSingleValueEvent 즉시성으로 한번만 불러온다, addChildEventListener 처음에 전체돌고 후에도 전체 차일드에 대한 체인지를 계속 다 보게됨
  *
  * - CardStackView -> 스와이프 애니메이션
  *  어떻게 찾고싶은 좋은 라이브러리를 쉽게 찾을 수 있을까? Most Stars, not Archived, recent update , detail description
@@ -54,6 +54,8 @@ import nosorae.module_basic.databinding.ActivityTinderBinding
  * - DB 에서 사용되는 Key 값 같은 여러번 쓰이면서 상수로 사용되는 것은 따로 상수 관리 클래스를 만들어 실수를 미연에 방지한다.
  *
  * - xml 이든 클래스든 유저에게 보이는 모든 string 은 resource 로 관리해주는 것이 좋다.
+ *
+ * - 클래스들 폴더화 해보는 게 좋겠다
  *
  *
  */

@@ -94,6 +94,11 @@
         <activity android:name=".p13_tinder.TinderMatchedUserActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
 
+        <activity android:name=".p14_market.MarketActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+        <activity android:name=".p14_market.home.MarketAddArticleActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+
 
         <activity android:name=".MainActivity">
             <intent-filter>

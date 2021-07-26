@@ -78,6 +78,20 @@
     <string name="tinder_write_name">이름을 입력해주세요</string>
     <string name="tinder_like">LIKE</string>
     <string name="tinder_dislike">DISLIKE</string>
+    
+    
+    <string name="title_market">Second-Hand Market</string>
+    <string name="market_home">홈</string>
+    <string name="market_chatting">채팅</string>
+    <string name="market_my_page">내 정보</string>
+    <string name="market_title">중고 거래</string>
+    <string name="market_login">로그인</string>
+    <string name="market_logout">로그아웃</string>
+    <string name="market_sign_in">회원가입</string>
+    <string name="market_add_article">등록하기</string>
+    <string name="market_add_image">사진 등록하기</string>
+
+
 
 
 

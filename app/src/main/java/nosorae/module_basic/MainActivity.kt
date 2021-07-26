@@ -9,6 +9,7 @@ import nosorae.module_basic.p10_quote.QuoteActivity
 import nosorae.module_basic.p11_alarm.AlarmActivity
 import nosorae.module_basic.p12_book.BookActivity
 import nosorae.module_basic.p13_tinder.TinderActivity
+import nosorae.module_basic.p14_market.MarketActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
@@ -32,59 +33,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root) // R파일에서 레이아웃을 가져와서 연결해준다.
-        val button_bmi = findViewById<Button>(R.id.button_bmi) //레이아웃의 컴포넌트를 R파일의 id로 가져와서
-        val button_lotto = findViewById<Button>(R.id.button_lotto)
-        val button_diary = findViewById<Button>(R.id.button_diary)
-        val button_calculator = findViewById<Button>(R.id.button_calculator)
-        val button_picture_frame = findViewById<Button>(R.id.button_picture_frame)
-        val button_pomodoro = findViewById<Button>(R.id.button_pomodoro)
-        val button_recorder = findViewById<Button>(R.id.button_recorder)
-        val button_web = findViewById<Button>(R.id.button_web)
-        val button_push = findViewById<Button>(R.id.button_push)
-        val button_quote = findViewById<Button>(R.id.button_quote)
-        val button_alarm = findViewById<Button>(R.id.button_alarm)
 
-
-
-        button_bmi.setOnClickListener {
-            startActivity(Intent(this, BMIActivity::class.java))
-        }
-        button_lotto.setOnClickListener {
-            startActivity(Intent(this, LottoActivity::class.java))
-        }
-        button_diary.setOnClickListener {
-            startActivity(Intent(this, DiaryActivity::class.java))
-        }
-
-        button_calculator.setOnClickListener {
-            startActivity(Intent(this, CalculatorActivity::class.java))
-        }
-
-        button_picture_frame.setOnClickListener {
-            startActivity(Intent(this, PictureFrameActivity::class.java))
-        }
-
-        button_pomodoro.setOnClickListener {
-            startActivity(Intent(this, PomodoroActivity::class.java))
-        }
-
-        button_recorder.setOnClickListener {
-            startActivity(Intent(this, RecorderActivity::class.java))
-        }
-        button_web.setOnClickListener {
-            startActivity(Intent(this, WebActivity::class.java))
-        }
-        button_push.setOnClickListener {
-            startActivity(Intent(this, PushActivity::class.java))
-        }
-        button_quote.setOnClickListener {
-            startActivity(Intent(this, QuoteActivity::class.java))
-        }
-        button_alarm.setOnClickListener {
-            startActivity(Intent(this, AlarmActivity::class.java))
-        }
+        startProject(binding.buttonBmi, BMIActivity::class.java)
+        startProject(binding.buttonLotto, LottoActivity::class.java)
+        startProject(binding.buttonDiary, DiaryActivity::class.java)
+        startProject(binding.buttonCalculator, CalculatorActivity::class.java)
+        startProject(binding.buttonPictureFrame, PictureFrameActivity::class.java)
+        startProject(binding.buttonPomodoro, PomodoroActivity::class.java)
+        startProject(binding.buttonRecorder, RecorderActivity::class.java)
+        startProject(binding.buttonWeb, WebActivity::class.java)
+        startProject(binding.buttonPush, PushActivity::class.java)
+        startProject(binding.buttonQuote, QuoteActivity::class.java)
+        startProject(binding.buttonAlarm, AlarmActivity::class.java)
         startProject(binding.buttonBook, BookActivity::class.java)
         startProject(binding.buttonTinder, TinderActivity::class.java)
+        startProject(binding.buttonMarket, MarketActivity::class.java)
     }
     private fun startProject(button: Button, activity: Class<*>) {
         button.setOnClickListener {

@@ -2,7 +2,6 @@ package nosorae.module_basic.p13_tinder
 
 import android.content.Intent
 import android.os.Bundle
-import android.renderscript.Sampler
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -21,13 +20,14 @@ import com.yuyakaido.android.cardstackview.CardStackView
 import com.yuyakaido.android.cardstackview.Direction
 import nosorae.module_basic.R
 import nosorae.module_basic.databinding.ActivityTinderLikeBinding
-import nosorae.module_basic.p13_tinder.DBKey.Companion.DISLIKE
-import nosorae.module_basic.p13_tinder.DBKey.Companion.LIKE
-import nosorae.module_basic.p13_tinder.DBKey.Companion.LIKED_BY
-import nosorae.module_basic.p13_tinder.DBKey.Companion.MATCHED
-import nosorae.module_basic.p13_tinder.DBKey.Companion.NAME
-import nosorae.module_basic.p13_tinder.DBKey.Companion.USERS
-import nosorae.module_basic.p13_tinder.DBKey.Companion.USER_ID
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.DISLIKE
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.LIKE
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.LIKED_BY
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.MATCHED
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.NAME
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.USERS
+import nosorae.module_basic.p13_tinder.TinderDBKey.Companion.USER_ID
+import nosorae.module_basic.p13_tinder.adapter.CardItemAdapter
 import nosorae.module_basic.p13_tinder.model.CardItem
 
 class TinderLikeActivity: AppCompatActivity(), CardStackListener {
@@ -131,7 +131,7 @@ class TinderLikeActivity: AppCompatActivity(), CardStackListener {
         currentUserDB.updateChildren(user)
         myName.text = name
 
-        // 유저 정보를 가져와서서
+        // 유저 정보를 가져와서
        getUnselectedUsers()
     }
 

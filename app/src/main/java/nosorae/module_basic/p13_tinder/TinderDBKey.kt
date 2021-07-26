@@ -1,6 +1,6 @@
 package nosorae.module_basic.p13_tinder
 
-class DBKey {
+class TinderDBKey {
     companion object {
         const val USERS = "Users"
         const val LIKED_BY = "likedBy"

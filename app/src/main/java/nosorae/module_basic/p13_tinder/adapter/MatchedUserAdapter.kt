@@ -1,4 +1,4 @@
-package nosorae.module_basic.p13_tinder
+package nosorae.module_basic.p13_tinder.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
