@@ -6,9 +6,11 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.google.android.gms.common.internal.Objects
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -48,11 +50,12 @@ class MarketAddArticleActivity: AppCompatActivity() {
     }
     private fun initAddArticleButton() {
         binding.fragmentMarketAddArticleButtonSubmit.setOnClickListener {
+            showProgress()
             val title = binding.fragmentMarketAddArticleEditTextTitle.text.toString()
             val price = binding.fragmentMarketAddArticleEditTextPrice.text.toString()
             val sellerId = auth.currentUser?.uid.orEmpty()
 
-            // 이미지가 있으면 업로드 과넞ㅇ을 추가
+            // 이미지가 있으면 업로드 과정을 추가
             if (selectedUri != null) {
                 val photoUri = selectedUri ?: return@setOnClickListener // 물론 리턴될 일은 거의 없다. (다른 스레드에서 건드리는 경우정도..)
                 uploadPhoto(selectedUri!!,
@@ -61,16 +64,12 @@ class MarketAddArticleActivity: AppCompatActivity() {
                     },
                     errorHandler = {
                         Toast.makeText(this, "사진 업로드에 실패했습니다.", Toast.LENGTH_SHORT).show()
-
+                        hideProgress()
                     })
             } else {
                 Toast.makeText(this, "", Toast.LENGTH_SHORT).show()
+                uploadArticle(sellerId, title, price, "")
             }
-
-
-            // 이곳에 왔다는 것은 이미지 선택 안했다는 말
-            uploadArticle(sellerId, title, price, "")
-
 
         }
 
@@ -102,25 +101,36 @@ class MarketAddArticleActivity: AppCompatActivity() {
         val fileName = "${System.currentTimeMillis()}.png"
         storage.reference.child("market/article/photo").child(fileName).putFile(uri).addOnCompleteListener {
                 if (it.isSuccessful) {
-                    //업로드 완료된 경우
+                    Log.d("market", "storage 에 이미지가 업로드 됨")
+                    // storage 에 업로드 완료된 경우, 이제 해당 파일로 가서 download url 을 가져온다. 그것에 성공함을 나타내는 게 addOnCompleteListener
+                        // 이미지를 업로드하는데 시간이 좀 걸린다.
                     storage.reference
                         .child("market/article/photo")
                         .child(fileName)
-                        .downloadUrl // 이게 핵심!!! 이걸 database 에 저장해서 가져온 다음 Glide load 메서드에 인자로 넣어주면 되겠다.
+                        .downloadUrl
+                        // 이게 핵심!!! 이걸 database 에 저장해서 가져온 다음 Glide load 메서드에 인자로 넣어주면 되겠다??
                         .addOnSuccessListener { uri ->
+                            // DB 에 업로드 하는 함수
+                            Log.d("market", "url 가져오기 성공")
                             successHandler(uri.toString())
+                        }
+                        .addOnFailureListener {
+                            Log.d("market", "url 가져오기 실패")
+                            errorHandler()
                         }
 
                 } else {
+                    Log.d("market", "storage 에 이미지가 업로드되지 않음")
                     errorHandler()
                 }
             }
 
     }
-    private fun uploadArticle(sellerId: String, title: String, price: String, imageUrl: String) {
-        val model = ArticleModel(sellerId, title, System.currentTimeMillis(), "$price 원", "")
+    private fun uploadArticle(sellerId: String, title: String, price: String, imageUrl : String) {
+        val model = ArticleModel(sellerId, title, System.currentTimeMillis(), "$price 원", imageUrl)
         // push 는 하나의 아이템을 만들겠다는 말
         articleDB.push().setValue(model) // 이러면 임의의 키값이 생긴 것 아래에 ArticleModel 객체가 들어가게된다.
+        hideProgress()
         finish()
     }
 
@@ -145,6 +155,14 @@ class MarketAddArticleActivity: AppCompatActivity() {
         val intent = Intent(Intent.ACTION_GET_CONTENT)
         intent.type = "image/*" // 이미지타입의 모든 것을 가져와라
         startActivityForResult(intent, RESULT_CODE)
+    }
+
+    private fun showProgress() {
+        binding.marketAddArticleProgressBar.isVisible = true
+
+    }
+    private fun hideProgress() {
+        binding.marketAddArticleProgressBar.isVisible = false
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -98,6 +98,8 @@
             android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
         <activity android:name=".p14_market.home.MarketAddArticleActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+        <activity android:name=".p14_market.chatDetail.MarketChatRoomActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
 
 
         <activity android:name=".MainActivity">

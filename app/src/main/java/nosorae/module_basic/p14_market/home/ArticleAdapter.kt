@@ -11,7 +11,7 @@ import nosorae.module_basic.databinding.ItemMarketArticleBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class ArticleAdapter: ListAdapter<ArticleModel, ArticleAdapter.ViewHolder>(diffUtil) {
+class ArticleAdapter(val onItemClicked: (ArticleModel) -> Unit): ListAdapter<ArticleModel, ArticleAdapter.ViewHolder>(diffUtil) {
 
     inner class ViewHolder(private val binding: ItemMarketArticleBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(article: ArticleModel) {
@@ -25,6 +25,16 @@ class ArticleAdapter: ListAdapter<ArticleModel, ArticleAdapter.ViewHolder>(diffU
                     .with(binding.itemMarketArticleImageView)
                     .load(article.imageUrl)
                     .into(binding.itemMarketArticleImageView)
+            }
+
+            binding.root.setOnClickListener {
+                onItemClicked(ArticleModel(
+                    article.sellerId,
+                    article.title,
+                    article.createdAt,
+                    article.price,
+                    article.imageUrl
+                ))
             }
         }
 
