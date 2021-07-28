@@ -34,7 +34,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    // p12 Book View Binding 활성화
+    // p12 Book View Binding 부터 활성화
     viewBinding {
         enabled = true
     }
@@ -61,10 +61,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx' // p9 push
     implementation 'com.google.firebase:firebase-config-ktx' // p10 quote
 
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0' //p12 library
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' //p12 library, p15 airbnb
     // 서버에서 가져온 String 형태의 json 을 gson 으로 변환하는 걸 도와주는 gson 라이브러리도 추가
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //p12 library
-    implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //p12 library, p15 airbnb
+    implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library, p15 airbnb
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' //p12 library 강의에서는 이건 안했다.
 
     implementation 'com.google.firebase:firebase-auth-ktx'
@@ -73,7 +73,12 @@ dependencies {
     implementation 'com.facebook.android:facebook-android-sdk:4.42.0' // 이건 내가 그냥 추가한 거
     implementation "com.yuyakaido.android:card-stack-view:2.3.4" // p13
 
-    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx' // p14 secondhand market
+
+    implementation 'com.naver.maps:map-sdk:3.12.0' // p15 airbnb
+    implementation 'com.google.android.gms:play-services-location:18.0.0' // p15 airbnb 위치권한
+
+
 
 
 

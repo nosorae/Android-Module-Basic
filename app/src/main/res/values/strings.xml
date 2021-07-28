@@ -92,6 +92,11 @@
     <string name="market_add_article">등록하기</string>
     <string name="market_add_image">사진 등록하기</string>
 
+    <string name="title_airbnb">Airbnb</string>
+    <string name="airbnb_bottom_sheet_title">여러개의 숙소</string>
+
+    <string name="title_youtube">Youtube</string>
+
 
 
 

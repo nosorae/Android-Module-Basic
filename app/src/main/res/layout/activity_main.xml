@@ -101,6 +101,18 @@
              android:layout_height="wrap_content"
              android:text="@string/title_market" />
 
+         <Button
+             android:id="@+id/button_airbnb"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_airbnb" />
+
+         <Button
+             android:id="@+id/button_youtube"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:text="@string/title_youtube" />
+
       </LinearLayout>
    </ScrollView>
 

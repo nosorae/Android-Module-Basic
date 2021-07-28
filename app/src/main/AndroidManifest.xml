@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- P5 Picture Frame -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- P7 Recorder -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- p8 Web, p12 Book -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- p15 Airbnb -->
 
     <application
         android:allowBackup="true"
@@ -91,15 +92,31 @@
         <activity android:name=".p13_tinder.TinderLikeActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
 
-        <activity android:name=".p13_tinder.TinderMatchedUserActivity"
-            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+        <activity
+            android:name=".p13_tinder.TinderMatchedUserActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
-        <activity android:name=".p14_market.MarketActivity"
-            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
-        <activity android:name=".p14_market.home.MarketAddArticleActivity"
-            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
-        <activity android:name=".p14_market.chatDetail.MarketChatRoomActivity"
-            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+        <activity
+            android:name=".p14_market.MarketActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+        <activity
+            android:name=".p14_market.home.MarketAddArticleActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+        <activity
+            android:name=".p14_market.chatDetail.MarketChatRoomActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
+        <activity
+            android:name=".p15_airbnb.AirActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="@string/naverMapAPIKey" />
+
+        <activity
+            android:name=".p16_youtube.YoutubeActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
 
         <activity android:name=".MainActivity">

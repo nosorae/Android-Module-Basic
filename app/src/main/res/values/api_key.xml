@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="interParkAPIKey">A15295E2FAAE0DD7D49F1EBDF8EF44CF80BC397F403F276D0774FB2EF700E280</string>
+    <string name="naverMapAPIKey">qwmljy8m6r</string>
 </resources>

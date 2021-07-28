@@ -10,6 +10,8 @@ import nosorae.module_basic.p11_alarm.AlarmActivity
 import nosorae.module_basic.p12_book.BookActivity
 import nosorae.module_basic.p13_tinder.TinderActivity
 import nosorae.module_basic.p14_market.MarketActivity
+import nosorae.module_basic.p15_airbnb.AirActivity
+import nosorae.module_basic.p16_youtube.YoutubeActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
@@ -48,6 +50,9 @@ class MainActivity : AppCompatActivity() {
         startProject(binding.buttonBook, BookActivity::class.java)
         startProject(binding.buttonTinder, TinderActivity::class.java)
         startProject(binding.buttonMarket, MarketActivity::class.java)
+        startProject(binding.buttonAirbnb, AirActivity::class.java)
+        startProject(binding.buttonYoutube, YoutubeActivity::class.java)
+
     }
     private fun startProject(button: Button, activity: Class<*>) {
         button.setOnClickListener {

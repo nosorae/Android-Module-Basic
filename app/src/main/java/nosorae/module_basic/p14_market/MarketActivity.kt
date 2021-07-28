@@ -80,7 +80,7 @@ import nosorae.module_basic.p14_market.myPage.MarketMyPageFragment
  * - 채팅은 firebase realtime database 가 아니었다면 웹 소켓이나 레트로핏 풀링방식? 으로 구현할 수 있다.
  *
  * - 추가1 채팅방에 마지막 메세지, 프로필사진, 닉네임, 나 오른쪽 상대 왼쪽, 색깔
- * - 추가2 채팅방 중복 방지는 어떻게 할까? articleId 와 senderId buyerId 세개 묶어서 키값으로 만들면 될 듯 한데
+ * - 추가2 TODO 채팅방 중복 방지는 어떻게 할까? articleId 와 senderId buyerId 세개 묶어서 키값으로 만들면 될 듯 한데
  * - 추가3 아이템 상세창
  *
  *
