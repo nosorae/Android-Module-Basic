@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_youtube_video_image_view_thumbnail"
+        android:layout_width="0dp"
+        android:layout_height="230dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_youtube_video_text_view_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toEndOf="@id/item_youtube_video_image_view_logo"
+        app:layout_constraintTop_toTopOf="@id/item_youtube_video_image_view_logo"
+        tools:text="유튜브 제목이야" />
+
+    <TextView
+        android:id="@+id/item_youtube_video_text_view_subtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/item_youtube_video_text_view_title"
+        app:layout_constraintStart_toStartOf="@id/item_youtube_video_text_view_title"
+        app:layout_constraintTop_toBottomOf="@id/item_youtube_video_text_view_title"
+        tools:text="이건 내용이야 description!!" />
+
+    <ImageView
+        android:id="@+id/item_youtube_video_image_view_logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/youtube_background_circle"
+        android:background="@drawable/youtube_background_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_youtube_video_image_view_thumbnail" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
