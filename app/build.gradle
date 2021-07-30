@@ -61,10 +61,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx' // p9 push
     implementation 'com.google.firebase:firebase-config-ktx' // p10 quote
 
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0' //p12 library, p15 airbnb, p16 youtube
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' //p12 library, p15 airbnb, p16 youtube, p17 music
     // 서버에서 가져온 String 형태의 json 을 gson 으로 변환하는 걸 도와주는 gson 라이브러리도 추가
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //p12 library, p15 airbnb
-    implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library, p15 airbnb
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //p12 library, p15 airbnb, p16 youtube, p17 music
+    implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library, p15 airbnb, p17 music
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' //p12 library 강의에서는 이건 안했다.
 
     implementation 'com.google.firebase:firebase-auth-ktx'
@@ -78,6 +78,6 @@ dependencies {
     implementation 'com.naver.maps:map-sdk:3.12.0' // p15 airbnb
     implementation 'com.google.android.gms:play-services-location:18.0.0' // p15 airbnb 위치권한
 
-    implementation 'com.google.android.exoplayer:exoplayer:2.14.2' // p16 youtube
+    implementation 'com.google.android.exoplayer:exoplayer:2.14.2' // p16 youtube p17 music
 
 }

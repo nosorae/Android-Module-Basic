@@ -32,6 +32,12 @@
 
     <color name="orange">#fe7f35</color>
 
+    <color name="music_background">#475263</color>
+    <color name="music_white_background">#ececec</color>
+    <color name="music_gray_97">#979797</color>
+    <color name="music_gray_aa">#aaaaaa</color>
+    <color name="music_seek_background">#d8d8d8</color>
+
 
 
 

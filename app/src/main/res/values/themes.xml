@@ -51,4 +51,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">#FF000044</item>
         <!-- Customize your theme here. -->
     </style>
+
+
+    <style name="Theme.ModuleBasic.Music" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/music_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>

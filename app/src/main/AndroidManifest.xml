@@ -118,6 +118,10 @@
             android:name=".p16_youtube.YoutubeActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
+        <activity
+            android:name=".p17_music.MusicActivity"
+            android:theme="@style/Theme.ModuleBasic.Music" />
+
 
         <activity android:name=".MainActivity">
             <intent-filter>
