@@ -2,4 +2,6 @@
 <resources>
     <string name="interParkAPIKey">A15295E2FAAE0DD7D49F1EBDF8EF44CF80BC397F403F276D0774FB2EF700E280</string>
     <string name="naverMapAPIKey">qwmljy8m6r</string>
+    <string name="tMapAPIKey">l7xxfd1a578fac974be3ab973d9696e89ae0</string>
+    <string name="googleMapAPIKey">AIzaSyDpOGbbcXxbN0zSAskQlfEQlGw9OVqHuTM</string>
 </resources>

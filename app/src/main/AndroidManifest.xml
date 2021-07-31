@@ -4,8 +4,10 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- P5 Picture Frame -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- P7 Recorder -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- p8 Web, p12 Book -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- p15 Airbnb -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- p8 Web, p12 Book ... -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- p15 Airbnb, p18 location-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/> <!-- p18 location -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> <!-- p18 location -->
 
     <application
         android:allowBackup="true"
@@ -121,6 +123,16 @@
         <activity
             android:name=".p17_music.MusicActivity"
             android:theme="@style/Theme.ModuleBasic.Music" />
+
+        <activity android:name=".p18_location.LocationActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+
+        <activity android:name=".p18_location.LocationSearchActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"/>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
 
 
         <activity android:name=".MainActivity">

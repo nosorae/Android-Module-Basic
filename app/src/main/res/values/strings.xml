@@ -101,6 +101,11 @@
 
     <string name="title_music">Music Streaming</string>
     <string name="music_playlist">재생목록</string>
+    
+    <string name="title_location">Location Search</string>
+    <string name="location_search">검색</string>
+    <string name="location_search_hint">검색어를 입력해주세요</string>
+    <string name="location_search_result_none">검색 결과가 없습니다.</string>
 
 
 
