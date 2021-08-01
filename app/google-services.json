@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "102633758691",
+    "firebase_url": "https://android-module-fast-campus-default-rtdb.firebaseio.com",
+    "project_id": "android-module-fast-campus",
+    "storage_bucket": "android-module-fast-campus.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102633758691:android:123ded76dc086f1b620ad6",
+        "android_client_info": {
+          "package_name": "nosorae.module_basic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102633758691-973hinn9kni7lkaebenlir2t5v8s0os6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYINYXl7hFK1skWnqzQgNinNgSke8bJy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102633758691-973hinn9kni7lkaebenlir2t5v8s0os6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

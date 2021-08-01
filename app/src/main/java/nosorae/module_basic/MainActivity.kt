@@ -15,6 +15,7 @@ import nosorae.module_basic.p16_youtube.YoutubeActivity
 import nosorae.module_basic.p17_music.MusicActivity
 import nosorae.module_basic.p18_location.LocationActivity
 import nosorae.module_basic.p18_location.LocationSearchActivity
+import nosorae.module_basic.p19_ott.OttActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         startProject(binding.buttonYoutube, YoutubeActivity::class.java)
         startProject(binding.buttonMusic, MusicActivity::class.java)
         startProject(binding.buttonLocation, LocationSearchActivity::class.java)
+        startProject(binding.buttonOtt, OttActivity::class.java)
 
     }
     private fun startProject(button: Button, activity: Class<*>) {

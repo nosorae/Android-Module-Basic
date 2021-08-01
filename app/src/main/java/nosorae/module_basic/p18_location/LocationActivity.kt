@@ -56,7 +56,9 @@ import kotlin.coroutines.CoroutineContext
  * - RecyclerView 의 layoutManager 를 프로그래머틱으로 정의하는 게 아니라 xml 에서도 정의할 수 있구나
  *       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
  *
+ * - 이번에 권한 부분 학습이 미흡하다.
  *
+ * - TODO 현재 내 위치 불러오는 코드가 정상동작하지 않는다. 코드 수정이 필요하다.
  *
  */
 class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope {
@@ -69,28 +71,32 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
 
     private lateinit var job: Job
     override val coroutineContext: CoroutineContext
-        get() = Dispatchers.Main + job
+        get() = Dispatchers.Main + job // 어떤 스레드에서 기본동작할지 명시해줘야한다.
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLocationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        job = Job()
 
-        if (::searchResult.isInitialized.not()) {
-            intent?.let {
-                searchResult =
-                    it.getParcelableExtra<LocationSearchResultEntity>(SEARCH_RESULT_EXTRA_KEY)
-                        ?: throw Exception("데이터가 존재하지 않습니다.")
-                setupGoogleMap()
-            }
-        }
+        //bindViews()
+
+//        if (::searchResult.isInitialized.not()) {
+//            intent?.let {
+//                searchResult =
+//                    it.getParcelableExtra<LocationSearchResultEntity>(SEARCH_RESULT_EXTRA_KEY)
+//                        ?: throw Exception("데이터가 존재하지 않습니다.")
+//                setupGoogleMap()
+//            }
+//        }
+        setupGoogleMap()
+        loadReverseGeoInformation(LocationLatLngEntity((37.586697).toFloat(), (126.987489).toFloat()))
 
     }
 
     private fun bindViews() = with(binding) {
         locationFloatingButtonCurrent.setOnClickListener {
+            Log.d("floating", "플로팅 버튼 클릭됨")
             getMyLocation()
         }
     }
@@ -101,15 +107,16 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
         }
         val isGpsEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
         if (isGpsEnabled) {
-            if (ContextCompat.checkSelfPermission(
+            if ((ContextCompat.checkSelfPermission(
                     this,
                     Manifest.permission.ACCESS_FINE_LOCATION
-                ) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(
+                ) != PackageManager.PERMISSION_GRANTED) || (ContextCompat.checkSelfPermission(
                     this,
                     Manifest.permission.ACCESS_COARSE_LOCATION
-                ) != PackageManager.PERMISSION_GRANTED
+                ) != PackageManager.PERMISSION_GRANTED)
             ) {
-                // 권한 있는 상태
+                // 권한 없는 상태
+                Log.d("floating", "권한이 없어서 requestPermission 호출")
                 ActivityCompat.requestPermissions(
                     this,
                     arrayOf(
@@ -120,6 +127,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
                 )
 
             } else {
+                Log.d("floating", "권한 있음. setMyLocationListener 호출")
                 // 현재 내 위치 불러오기
                 setMyLocationListener()
             }
@@ -133,12 +141,15 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
+        Log.d("floating", "onRequestPermissionsResult 도착")
         if (requestCode == PERMISSION_REQUEST_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
                 setMyLocationListener()
+                Log.d("floating", "onRequestPermissionsResult 에서 권한 확인 완료, setMyLocationListener 호출")
 
             } else {
                 Toast.makeText(this, "권한을 받지 못했습니다.", Toast.LENGTH_SHORT).show()
+                Log.d("floating", "onRequestPermissionsResult 에서 권한을 받지 못함을 확인")
             }
         }
     }
@@ -153,6 +164,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
 
 
         with(locationManager) {
+            Log.d("floating", "setMyLocationListener 에서 requestLocationUpdates 호출 onLocationChanged 에서 listen")
             requestLocationUpdates(
                 LocationManager.GPS_PROVIDER,
                 minTime,
@@ -164,42 +176,46 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
                 minTime,
                 minDistance,
                 myLocationListener
-            )
+            ) // 이거 왜 두번하지??
         }
 
 
     }
 
     private fun onCurrentLocationChanged(locationLatLngEntity: LocationLatLngEntity) {
-//        map.moveCamera(
-//            CameraUpdateFactory.newLatLngZoom(
-//                LatLng(
-//                    locationLatLngEntity.lat.toDouble(),
-//                    locationLatLngEntity.lng.toDouble()
-//                ), CAMERA_ZOOM_LEVEL
-//            )
-//        )
+        Log.d("floating", "onCurrentLocationChanged 도착 loadReverseGeoInformation 호출")
+        map.moveCamera(
+            CameraUpdateFactory.newLatLngZoom(
+                LatLng(
+                    locationLatLngEntity.lat.toDouble(),
+                    locationLatLngEntity.lng.toDouble()
+                ), CAMERA_ZOOM_LEVEL
+            )
+        )
 
         loadReverseGeoInformation(locationLatLngEntity)
-        removeLocationListener() // 이거 왜하는 거더라
+        removeLocationListener() // 내 위치가 바뀌면 제거
     }
 
     private fun loadReverseGeoInformation(locationLatLngEntity: LocationLatLngEntity) {
+        Log.d("floating", "loadReverseGeoInformation 들어옴")
         launch(coroutineContext) {
+            Log.d("floating", "loadReverseGeoInformation 에서 코루틴 들어온 직후")
             try {
                 withContext(Dispatchers.IO) {
+                    Log.d("floating", "loadReverseGeoInformation 에서 api 호출 직전")
                     val response = LocationRetrofitUtil.apiService.getGeoLocation(
                         lat = locationLatLngEntity.lat.toDouble(),
                         lon = locationLatLngEntity.lng.toDouble()
                     )
-
+                    Log.d("floating", "loadReverseGeoInformation 에서 api 호출 중")
                     if (response.isSuccessful) {
                         val body = response.body()
 
                         withContext(Dispatchers.Main) {
-                            Log.e("list", body.toString())
+                            Log.e("floating", body.toString())
                             body?.let {
-                                setUpMarker(LocationSearchResultEntity(
+                                currentSelectMarker = setUpMarker(LocationSearchResultEntity(
                                     fullAdress = it.addressInfo.fullAddress ?: "주소 정보 없음",
                                     buildingName = it.addressInfo.buildingName ?: "빌딩 이름 없음",
                                     locationLatLng = locationLatLngEntity
@@ -214,7 +230,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
                 }
 
             } catch (e: Exception) {
-                
+                Log.e("floating", e.toString())
                 e.printStackTrace()
                 Toast.makeText(this@LocationActivity, "현재위치를 불러오지 못했습니다.", Toast.LENGTH_SHORT).show()
 
@@ -233,6 +249,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
 
     inner class MyLocationListener : LocationListener {
         override fun onLocationChanged(location: Location) {
+            Log.d("floating", "onLocationChanged 도착 onCurrentLocationChanged 호출")
             val locationLatLngEntity = LocationLatLngEntity(
                 location.latitude.toFloat(),
                 location.longitude.toFloat()
@@ -251,8 +268,12 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback, CoroutineScope
     override fun onMapReady(map: GoogleMap) {
         this.map = map
         // 여기서 구글맵 객체를 받아와서 사용할 수 있다.
-        currentSelectMarker = setUpMarker(searchResult)
-        currentSelectMarker?.showInfoWindow()
+        if (::searchResult.isInitialized) {
+            currentSelectMarker = setUpMarker(searchResult)
+            currentSelectMarker?.showInfoWindow()
+        }
+
+
 
     }
 

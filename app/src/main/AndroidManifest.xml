@@ -134,6 +134,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="${MAPS_API_KEY}" />
 
+        <activity android:name=".p19_ott.OttActivity"
+            android:theme="@style/Theme.ModuleBasic"
+            />
+
 
         <activity android:name=".MainActivity">
             <intent-filter>

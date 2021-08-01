@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="500">
+        <KeyFrameSet>
+
+
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/ott_image_tv"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:alpha="0"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.9" />
+        <Constraint
+            android:id="@+id/ott_image_tablet"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:alpha="0"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.8" />
+        <Constraint
+            android:id="@+id/ott_image_laptop"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:alpha="0"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="1"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.8" />
+        <Constraint
+            android:id="@+id/ott_image_phone"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:alpha="0"
+            android:scaleX="0.8"
+            android:scaleY="0.8"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintHorizontal_bias="1"
+            motion:layout_constraintVertical_bias="0.8" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/ott_image_tv"
+            android:layout_width="400dp"
+            android:layout_height="250dp"
+            android:alpha="1"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.75" />
+        <Constraint
+            android:id="@+id/ott_image_tablet"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:alpha="1"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.1"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.75" />
+        <Constraint
+            android:id="@+id/ott_image_laptop"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:alpha="1"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.8"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintVertical_bias="0.75" />
+        <Constraint
+            android:id="@+id/ott_image_phone"
+            android:layout_width="100dp"
+            android:layout_height="130dp"
+            android:alpha="1"
+            android:scaleX="1.0"
+            android:scaleY="1.0"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintHorizontal_bias="9.5"
+            motion:layout_constraintVertical_bias="0.7" />
+    </ConstraintSet>
+</MotionScene>
