@@ -113,10 +113,10 @@
     <string name="ott_login">로그인</string>
     <string name="ott_subtitle_free">영화, 드라마, 예능 등 8만 편의 작품</string>
     <string name="ott_subtitle_free_weeks">2주 무료 이용</string>
-    <string name="ott_title_devices">다양한 디바이스에서 "\n" 자유롭게 감상</string>
-    <string name="ott_subtitle_devices">PC, 태블릿, 펀, 크롬캐스트, TV \\n어디서나 최고의 화질로</string>
-    <string name="ott_title_data">5억개 평가 데이터 기반</string>
-    <string name="ott_subtitle_data">ㄹ</string>
+    <string name="ott_title_devices">다양한 디바이스에서\n자유롭게 감상</string>
+    <string name="ott_subtitle_devices">PC, 태블릿, 펀, 크롬캐스트, TV \n어디서나 최고의 화질로</string>
+    <string name="ott_title_data">5억개 평가 데이터 기반 \n정확한 추천</string>
+    <string name="ott_subtitle_data">취향에 안 맞는 작품에\n두 시간을 낭비할 순 없으니까</string>
 
 
 

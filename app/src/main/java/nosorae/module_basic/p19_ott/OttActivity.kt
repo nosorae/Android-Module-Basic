@@ -4,15 +4,18 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.OnApplyWindowInsetsListener
 import androidx.core.view.ViewCompat
 import com.google.android.material.appbar.AppBarLayout
+import nosorae.module_basic.R
 import nosorae.module_basic.databinding.ActivityOttBinding
 import kotlin.math.abs
 
@@ -21,28 +24,30 @@ import kotlin.math.abs
  *      https://developer.android.com/training/constraint-layout/motionlayout?hl=ko
  *      TODO https://codelabs.developers.google.com/codelabs/motion-layout#0 참고
  *      ConstraintLayout 상속, 복잡한 transition 구현을 편하게 만들었다.
+ *      ScrollView 의 scrollY, height 속성을 이용하여 원하는 스크롤타이밍에 원하는 모션을 사용하였다.
  *
- * - ConstraintSet 활용
  *
  * - CollapsingToolbar ( AppbarLayout 을 이용해 헤더 애니메이션 구현 )
- *      TODO https://freehoon.tistory.com/38 참고
+ *      TODO https://freehoon.tistory.com/38 참고 복습 필수!
  *
  * - Inset (FitSystemWindow)
+ *      TODO https://stackoverflow.com/questions/38621380/what-are-insets-in-android 참고 아직 이해를 덜했다.
+ *      뷰 안의 다른 뷰에대한 마진 개념인가?
  *
  * - 기본 constraintlayout 에서 런타임에 관계를 바꾸어주며 트랜지션을 구현할 수도 있다?
  *      https://developer.android.com/training/constraint-layout?hl=ko
  *      ConstraintLayout에서 ConstraintSet 및 TransitionManager를 사용하여 요소의 크기와 위치 변경사항을 애니메이션으로 보여줄 수 있습니다.
+ *      그냥 MotionLayout 사용하는 게 나을듯?
  *
  *
  * - android:fitsSystemWindows="false"
  *      상단의 status bar 하단까지가  윈도우에서 정의하고 있는 cf area 영역인데 그거 false 로 설정해서 그 바깥영역까지 침범할 수 있게 만든 것이다.
  *
- *
- *
  */
 class OttActivity: AppCompatActivity() {
     private lateinit var binding: ActivityOttBinding
     private var isGatheringMotionsAnimating: Boolean = false
+    private var isCurationMotionAnimating: Boolean = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityOttBinding.inflate(layoutInflater)
@@ -52,8 +57,9 @@ class OttActivity: AppCompatActivity() {
         initInsetMargin()
 
         initScrollView()
-        initDigitalThingsContainer()
-        initMainContainer()
+        initDigitalThingsContainerMotionLayout()
+        initMainContainerMotionLayout()
+        initCurationAnimationMotionLayout()
     }
 
     // 윈도우에 있는 모든 시스템영역의 인셋값을 조절하는 역할
@@ -103,8 +109,8 @@ class OttActivity: AppCompatActivity() {
 
     }
 
-    private fun initMainContainer() {
-        binding.ottContainerMain.setTransitionListener(object : MotionLayout.TransitionListener{
+    private fun initMainContainerMotionLayout() {
+        binding.ottMotionLayoutContainerMain.setTransitionListener(object : MotionLayout.TransitionListener{
             override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
 
             }
@@ -130,19 +136,34 @@ class OttActivity: AppCompatActivity() {
             val scrolledValue = binding.ottScrollView.scrollY
             if ( scrolledValue > 50f.dpToPx(this).toInt()) {
                 if (isGatheringMotionsAnimating.not()) {
-                    binding.ottContainerDigitalThings.transitionToEnd()
-                    binding.ottContainerMain.transitionToEnd()
+                    binding.ottMotionLayoutContainerDigitalThings.transitionToEnd()
+                    binding.ottMotionLayoutContainerMain.transitionToEnd()
+                    binding.ottMotionLayoutContainerDigitalThingsBackground.transitionToEnd()
                 }
             } else {
                 if(isGatheringMotionsAnimating.not()) {
-                    binding.ottContainerDigitalThings.transitionToStart()
-                    binding.ottContainerMain.transitionToStart()
+                    binding.ottMotionLayoutContainerDigitalThings.transitionToStart()
+                    binding.ottMotionLayoutContainerMain.transitionToStart()
+                    binding.ottMotionLayoutContainerDigitalThingsBackground.transitionToStart()
                 }
             }
+
+            Log.d("scroll", "scrolledValue = $scrolledValue, scrollViewHeight = ${binding.ottScrollView.height}")
+
+            if (scrolledValue > (binding.ottScrollView.height / 1.5).toInt()) {
+                Log.d("scroll", "150f dpToPx 를 넘었다.")
+                if (isCurationMotionAnimating.not()) {
+                    binding.ottMotionLayoutCurationAnimation.setTransition(R.id.curation_animation_start1, R.id.curation_animation_end1)
+                    binding.ottMotionLayoutCurationAnimation.transitionToEnd()
+                    isCurationMotionAnimating = true // 한번 보여주고 끝낼거라서 여기서 true 로 설정해서 더이상 애니메이션이 발생하지 않게 만들어본다.
+                }
+            }
+
+
         }
     }
-    private fun initDigitalThingsContainer() {
-        binding.ottContainerDigitalThings.setTransitionListener(object : MotionLayout.TransitionListener {
+    private fun initDigitalThingsContainerMotionLayout() {
+        binding.ottMotionLayoutContainerDigitalThings.setTransitionListener(object : MotionLayout.TransitionListener {
             override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
                isGatheringMotionsAnimating = true
             }
@@ -160,6 +181,32 @@ class OttActivity: AppCompatActivity() {
             }
         })
     }
+
+    private fun initCurationAnimationMotionLayout() {
+        binding.ottMotionLayoutCurationAnimation.setTransitionListener(object : MotionLayout.TransitionListener {
+            override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) = Unit
+
+            override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {
+
+            }
+
+            override fun onTransitionCompleted(p0: MotionLayout?, currentId: Int) {
+                when (currentId) {
+                    R.id.curation_animation_end1 -> {
+                        binding.ottMotionLayoutCurationAnimation.setTransition(R.id.curation_animation_start2, R.id.curation_animation_end2)
+                        binding.ottMotionLayoutCurationAnimation.transitionToEnd()
+                    }
+                }
+
+
+            }
+
+            override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {
+
+            }
+        })
+    }
+
 
 
 }

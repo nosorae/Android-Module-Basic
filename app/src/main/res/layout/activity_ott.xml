@@ -5,158 +5,288 @@
     android:id="@+id/ott_coordinator_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:fitsSystemWindows="false"
     tools:context=".p19_ott.OttActivity">
 
     <androidx.constraintlayout.motion.widget.MotionLayout
-        android:id="@+id/ott_container_main"
+        android:id="@+id/ott_motion_layout_container_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layoutDescription="@xml/ott_button_shown_scene">
+        app:layoutDescription="@xml/ott_button_shown_scene"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/ott_scroll_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="16dp"
-                    android:background="@color/black">
+                    android:background="@color/black"
+                    android:paddingTop="16dp">
 
                     <TextView
+                        android:id="@+id/ott_text_subtitle_free"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
                         android:text="@string/ott_subtitle_free"
                         android:textColor="@color/white"
                         android:textSize="19sp"
-                        android:id="@+id/ott_text_subtitle_free"
-                        />
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <Button
+                        android:id="@+id/ott_text_subtitle_free_weeks"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:layout_constraintTop_toBottomOf="@id/ott_text_subtitle_free"
-                        app:layout_constraintStart_toStartOf="@id/ott_text_subtitle_free"
-                        app:layout_constraintEnd_toEndOf="@id/ott_text_subtitle_free"
-                        android:text="@string/ott_subtitle_free_weeks"
                         android:layout_marginTop="16dp"
-                        android:textColor="@color/white"
-                        android:id="@+id/ott_text_subtitle_free_weeks"
+                        android:layout_marginBottom="200dp"
                         android:paddingHorizontal="24dp"
                         android:paddingVertical="12dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        android:layout_marginBottom="200dp"
+                        android:text="@string/ott_subtitle_free_weeks"
+                        android:textColor="@color/white"
                         android:textSize="16sp"
-                        android:textStyle="bold"/>
-
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/ott_text_subtitle_free"
+                        app:layout_constraintStart_toStartOf="@id/ott_text_subtitle_free"
+                        app:layout_constraintTop_toBottomOf="@id/ott_text_subtitle_free" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.motion.widget.MotionLayout
-                    android:id="@+id/ott_container_digital_things"
+                    android:id="@+id/ott_motion_layout_container_digital_things_background"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layoutDescription="@xml/activity_ott_xml_constraintlayout_scene">
+                    app:layoutDescription="@xml/activity_ott_gathering_digital_things_background_scene">
 
                     <ImageView
+                        android:id="@+id/ott_image_gathering_digital_things_background"
                         android:layout_width="0dp"
                         android:layout_height="400dp"
                         android:scaleType="centerCrop"
-                        android:id="@+id/ott_image_gathering_digital_things_background"
                         android:src="@drawable/img_killingeve"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"/>
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <View
                         android:id="@+id/ott_view_gathering_digital_things_background_dim"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:background="@color/black"
-                        app:layout_constraintTop_toTopOf="@id/ott_image_gathering_digital_things_background"
-                        app:layout_constraintStart_toStartOf="@id/ott_image_gathering_digital_things_background"
                         app:layout_constraintBottom_toBottomOf="@id/ott_image_gathering_digital_things_background"
                         app:layout_constraintEnd_toEndOf="@id/ott_image_gathering_digital_things_background"
-                        />
+                        app:layout_constraintStart_toStartOf="@id/ott_image_gathering_digital_things_background"
+                        app:layout_constraintTop_toTopOf="@id/ott_image_gathering_digital_things_background" />
 
-                    
-
-
-
-
-
-                    <ImageView
-                        android:id="@+id/ott_image_tv"
-                        android:layout_width="400dp"
-                        android:layout_height="250dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_tv"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                    <TextView
+                        android:id="@+id/ott_text_title_devices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:gravity="center"
+                        android:text="@string/ott_title_devices"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/ott_image_tablet"
-                        android:layout_width="200dp"
-                        android:layout_height="100dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_tablet"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                    <TextView
+                        android:id="@+id/ott_text_subtitle_devices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="@string/ott_subtitle_devices"
+                        android:textColor="@color/gray"
+                        android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/ott_text_title_devices" />
 
 
-                    <ImageView
-                        android:id="@+id/ott_image_laptop"
-                        android:layout_width="200dp"
-                        android:layout_height="150dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_laptop"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                    <androidx.constraintlayout.motion.widget.MotionLayout
+                        android:id="@+id/ott_motion_layout_container_digital_things"
+                        android:layout_width="480dp"
+                        android:layout_height="300dp"
+                        android:layout_marginTop="120dp"
+                        app:layoutDescription="@xml/activity_ott_gathering_digital_things_scene"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent">
 
 
-                    <ImageView
-                        android:id="@+id/ott_image_phone"
-                        android:layout_width="100dp"
-                        android:layout_height="130dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_phone"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <ImageView
+                            android:id="@+id/ott_image_tv"
+                            android:layout_width="400dp"
+                            android:layout_height="250dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_tv"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/ott_image_tablet"
+                            android:layout_width="200dp"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_tablet"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <ImageView
+                            android:id="@+id/ott_image_laptop"
+                            android:layout_width="200dp"
+                            android:layout_height="150dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_laptop"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <ImageView
+                            android:id="@+id/ott_image_phone"
+                            android:layout_width="100dp"
+                            android:layout_height="130dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/ic_phone"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.motion.widget.MotionLayout>
 
 
                 </androidx.constraintlayout.motion.widget.MotionLayout>
 
-                <View
+
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:background="@color/black"/>
+                    android:layout_height="600dp"
+                    android:layout_marginBottom="80dp">
+
+                    <TextView
+                        android:id="@+id/ott_text_title_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/ott_title_data"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/ott_text_subtitle_data"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/ott_subtitle_data"
+                        android:textColor="@color/gray"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ott_text_title_data" />
+
+
+                    <androidx.constraintlayout.motion.widget.MotionLayout
+                        android:id="@+id/ott_motion_layout_curation_animation"
+                        android:layout_width="480dp"
+                        android:layout_height="480dp"
+                        app:layoutDescription="@xml/activity_ott_curation_animation_scene"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
+
+                        <View
+                            android:id="@+id/ott_view_curation_red"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/ott_background_circle"
+                            android:backgroundTint="@color/ott_red"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/ott_view_curation_yellow"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/ott_background_circle"
+                            android:backgroundTint="@color/ott_yellow"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/ott_view_curation_green"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/ott_background_circle"
+                            android:backgroundTint="@color/ott_green"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/ott_view_curation_blue"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:background="@drawable/ott_background_circle"
+                            android:backgroundTint="@color/ott_blue"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/ott_view_curation_white"
+                            android:layout_width="180dp"
+                            android:layout_height="180dp"
+                            android:background="@drawable/ott_background_circle"
+                            android:backgroundTint="@color/white"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </LinearLayout>
@@ -212,13 +342,14 @@
                     android:src="@drawable/img_intro" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
             <include
-                layout="@layout/layout_ott_intro_title"
                 android:id="@+id/ott_intro_title_layout"
+                layout="@layout/layout_ott_intro_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                app:layout_scrollFlags="scroll"/>
+                app:layout_scrollFlags="scroll" />
 
 
             <androidx.appcompat.widget.Toolbar

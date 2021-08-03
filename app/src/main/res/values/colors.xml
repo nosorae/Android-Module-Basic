@@ -38,6 +38,10 @@
     <color name="music_gray_aa">#aaaaaa</color>
     <color name="music_seek_background">#d8d8d8</color>
 
+    <color name="ott_yellow">#FFFF00</color>
+    <color name="ott_red">#FF0000</color>
+    <color name="ott_blue">#0000FF</color>
+    <color name="ott_green">#00FF00</color>
 
 
 
