@@ -60,7 +60,7 @@
     </style>
 
 
-    <style name="AppTheme.AppBarOverlay" parent="Theme.ModuleBasic">
+    <style name="AppTheme.AppBarOverlay" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/white</item>
         <item name="android:statusBarColor">@color/music_background</item>
         <item name="android:windowLightStatusBar">true</item>

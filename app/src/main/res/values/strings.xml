@@ -108,6 +108,15 @@
     <string name="location_search_result_none">검색 결과가 없습니다.</string>
 
     <string name="title_ott">OTT</string>
+    <string name="ott_title_watcha">WATCHA</string>
+    <string name="ott_title_free">"지금 무료로\n무제한 감상 시작"</string>
+    <string name="ott_login">로그인</string>
+    <string name="ott_subtitle_free">영화, 드라마, 예능 등 8만 편의 작품</string>
+    <string name="ott_subtitle_free_weeks">2주 무료 이용</string>
+    <string name="ott_title_devices">다양한 디바이스에서 "\n" 자유롭게 감상</string>
+    <string name="ott_subtitle_devices">PC, 태블릿, 펀, 크롬캐스트, TV \\n어디서나 최고의 화질로</string>
+    <string name="ott_title_data">5억개 평가 데이터 기반</string>
+    <string name="ott_subtitle_data">ㄹ</string>
 
 
 

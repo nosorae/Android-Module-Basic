@@ -6,19 +6,26 @@ import android.graphics.Color
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.core.view.OnApplyWindowInsetsListener
+import androidx.core.view.ViewCompat
+import com.google.android.material.appbar.AppBarLayout
 import nosorae.module_basic.databinding.ActivityOttBinding
+import kotlin.math.abs
 
 /**
  * - ScrollView 안에서의 MotionLayout 활용
  *      https://developer.android.com/training/constraint-layout/motionlayout?hl=ko
  *      TODO https://codelabs.developers.google.com/codelabs/motion-layout#0 참고
  *      ConstraintLayout 상속, 복잡한 transition 구현을 편하게 만들었다.
+ *
  * - ConstraintSet 활용
  *
  * - CollapsingToolbar ( AppbarLayout 을 이용해 헤더 애니메이션 구현 )
+ *      TODO https://freehoon.tistory.com/38 참고
  *
  * - Inset (FitSystemWindow)
  *
@@ -41,9 +48,59 @@ class OttActivity: AppCompatActivity() {
         binding = ActivityOttBinding.inflate(layoutInflater)
         setContentView(binding.root)
         makeStatusBarTransparent()
+        initAppBar()
+        initInsetMargin()
+
         initScrollView()
         initDigitalThingsContainer()
         initMainContainer()
+    }
+
+    // 윈도우에 있는 모든 시스템영역의 인셋값을 조절하는 역할
+    // 최상단 View 인 CoordinatorLayout 의 inset 값을 받아서 커스터마이징을 할 것이다.
+    private fun initInsetMargin() = with(binding) {
+        ViewCompat.setOnApplyWindowInsetsListener(ottCoordinatorLayout, OnApplyWindowInsetsListener { v, insets ->
+            val params = v.layoutParams as ViewGroup.MarginLayoutParams
+            params.bottomMargin = insets.systemWindowInsetBottom
+            ottToolBarContainer.layoutParams = (ottToolBarContainer.layoutParams as ViewGroup.MarginLayoutParams).apply {
+                setMargins(0, insets.systemWindowInsetTop, 0, 0)
+            }
+            ottCollapsingToolBarContainer.layoutParams = (ottCollapsingToolBarContainer.layoutParams as ViewGroup.MarginLayoutParams).apply {
+                setMargins(0, 0, 0, 0)
+            }
+            insets.consumeSystemWindowInsets()
+        })
+    }
+
+    // 스크롤하면서 알파값을 조절
+    private fun initAppBar() {
+        binding.ottAppBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { appBarLayout, verticalOffset ->
+            val topPadding = 300f.dpToPx(this) // 420 dp 중에 300 dp 는 무시되늰 것이다.
+            val realAlphaScrollHeight = appBarLayout.measuredHeight - appBarLayout.totalScrollRange // 스크롤 할 수 있는 범위 ( 120 dp )
+            val abstractOffSet = abs(verticalOffset)
+            val realAlphaVerticalOffset = if (abstractOffSet - topPadding < 0) 0f else abstractOffSet - topPadding // topPadding 이후에 실제로  움직인 값??
+            if (abstractOffSet < topPadding) {
+                binding.ottToolBarBackgroundView.alpha = 0f
+                return@OnOffsetChangedListener
+            }
+
+            val percentage = realAlphaVerticalOffset / realAlphaScrollHeight //  topPadding 이후에 실제로  움직인 값을 120 dp 로 나눠주었다고 생각하면 됨
+            binding.ottToolBarBackgroundView.alpha =
+                1 - (if (1 - percentage * 2 < 0) 0f else 1 - percentage * 2) // 알파값이 순간적으로 빠르게 올리기 위해서 *2 처리
+        })
+        initActionBar()
+    }
+
+    private fun initActionBar() = with(binding) {
+        ottToolBar.navigationIcon = null // @param icon Drawable to set, may be null to clear the icon
+        ottToolBar.setContentInsetsAbsolute(0,0)
+        setSupportActionBar(binding.ottToolBar) //Set a {@link android.widget.Toolbar Toolbar} to act as the {@link androidx.appcompat.app.ActionBar} for this Activity window.
+        supportActionBar?.let {  // Retrieve a reference to this activity's ActionBar.
+            it.setHomeButtonEnabled(false)
+            it.setDisplayHomeAsUpEnabled(false)
+            it.setDisplayShowHomeEnabled(false)
+        }
+
     }
 
     private fun initMainContainer() {
@@ -67,8 +124,11 @@ class OttActivity: AppCompatActivity() {
     }
 
     private fun initScrollView() {
+        // collapsing layout 이 다 스크롤 된 후부터 이 아래 스크롤뷰가 스크롤 계산되기 시작한다.
+        binding.ottScrollView.smoothScrollTo(0, 0)
         binding.ottScrollView.viewTreeObserver.addOnScrollChangedListener {
-            if (binding.ottScrollView.scrollY > 150f.dpToPx(this).toInt()) {
+            val scrolledValue = binding.ottScrollView.scrollY
+            if ( scrolledValue > 50f.dpToPx(this).toInt()) {
                 if (isGatheringMotionsAnimating.not()) {
                     binding.ottContainerDigitalThings.transitionToEnd()
                     binding.ottContainerMain.transitionToEnd()

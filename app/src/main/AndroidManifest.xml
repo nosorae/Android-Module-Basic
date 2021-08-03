@@ -135,8 +135,7 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity android:name=".p19_ott.OttActivity"
-            android:theme="@style/Theme.ModuleBasic"
-            />
+            android:theme="@style/AppTheme.AppBarOverlay" />
 
 
         <activity android:name=".MainActivity">
