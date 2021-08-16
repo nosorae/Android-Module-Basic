@@ -17,6 +17,7 @@ import nosorae.module_basic.p18_location.LocationActivity
 import nosorae.module_basic.p18_location.LocationSearchActivity
 import nosorae.module_basic.p19_ott.OttActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
+import nosorae.module_basic.p20_git.GitActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
 import nosorae.module_basic.p4_calculator.CalculatorActivity
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         startProject(binding.buttonMusic, MusicActivity::class.java)
         startProject(binding.buttonLocation, LocationSearchActivity::class.java)
         startProject(binding.buttonOtt, OttActivity::class.java)
+        startProject(binding.buttonGit, GitActivity::class.java)
 
     }
     private fun startProject(button: Button, activity: Class<*>) {

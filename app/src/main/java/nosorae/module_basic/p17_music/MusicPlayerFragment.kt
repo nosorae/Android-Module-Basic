@@ -78,7 +78,6 @@ class MusicPlayerFragment : Fragment(R.layout.fragment_music_player) {
                     musicAdapter.submitList(model.getAdapterModels())
                     // DiffUtil 을 통해서 UI 업데이트 기존 데이터클래스 copy 해서 isPlaying 값만 바꿔줬기 때문에 전체 리스트를 다시 그려주는 게 아니라 원래 isPlaying 이 바뀐 부분만 찾아서 리프레시 해줘서 비용이 적게든다.
 
-
                 }
 
                 // 재생, 재생끝, 버퍼링상태다 이런 상태가 내려올 때 seekbar 를 업데이트하겠다.

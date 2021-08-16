@@ -62,7 +62,7 @@
     <string name="alarm_turn_on">알람 켜기</string>
     <string name="alarm_turn_off">알람 끄기</string>
     <string name="alarm_reset_time">시간 재설정</string>
-    
+
     <string name="title_book">Book</string>
     <string name="book_save_review">저장하기</string>
 
@@ -78,8 +78,8 @@
     <string name="tinder_write_name">이름을 입력해주세요</string>
     <string name="tinder_like">LIKE</string>
     <string name="tinder_dislike">DISLIKE</string>
-    
-    
+
+
     <string name="title_market">Second-Hand Market</string>
     <string name="market_home">홈</string>
     <string name="market_chatting">채팅</string>
@@ -101,7 +101,7 @@
 
     <string name="title_music">Music Streaming</string>
     <string name="music_playlist">재생목록</string>
-    
+
     <string name="title_location">Location Search</string>
     <string name="location_search">검색</string>
     <string name="location_search_hint">검색어를 입력해주세요</string>
@@ -119,13 +119,10 @@
     <string name="ott_subtitle_data">취향에 안 맞는 작품에\n두 시간을 낭비할 순 없으니까</string>
 
 
-
-
-
-
+    <string name="title_git">GIT</string>
+    <string name="git_login">Github Login</string>
 
     <string name="app_name">Module-Basic</string>
-
 
 
 </resources>
