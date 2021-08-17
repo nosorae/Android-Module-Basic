@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_git_search_image_owner_profile"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toEndOf="@id/item_git_search_text_owner_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_github_logo" />
+
+    <TextView
+        android:id="@+id/item_git_search_text_owner_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/item_git_search_image_owner_profile"
+        app:layout_constraintStart_toEndOf="@id/item_git_search_image_owner_profile"
+        app:layout_constraintTop_toTopOf="@id/item_git_search_image_owner_profile"
+        tools:text="thisisid" />
+
+    <TextView
+        android:id="@+id/item_git_search_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_git_search_image_owner_profile"
+        tools:text="title" />
+
+    <TextView
+        android:id="@+id/item_git_search_text_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@id/item_git_search_text_title"
+        app:layout_constraintTop_toBottomOf="@id/item_git_search_text_title"
+        tools:text="subtitle" />
+
+    <TextView
+        android:id="@+id/item_git_search_text_stargazers_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_star"
+        android:drawablePadding="4dp"
+        android:drawableTint="@color/orange"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/item_git_search_text_subtitle"
+        app:layout_constraintTop_toBottomOf="@id/item_git_search_text_subtitle"
+        tools:text="1.2k" />
+
+    <TextView
+        android:id="@+id/item_git_search_text_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_git_language_circle"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toEndOf="@id/item_git_search_text_stargazers_count"
+        app:layout_constraintTop_toTopOf="@id/item_git_search_text_stargazers_count"
+        tools:text="Java" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/black"
+        android:id="@+id/git_search_view_divider"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

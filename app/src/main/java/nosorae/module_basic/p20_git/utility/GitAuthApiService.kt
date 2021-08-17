@@ -1,11 +1,9 @@
 package nosorae.module_basic.p20_git.utility
 
 import nosorae.module_basic.p20_git.data.response.GithubAccessTokenResponse
+import nosorae.module_basic.p20_git.data.response.GithubRepoSearchResponse
 import retrofit2.Response
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface GitAuthApiService {
 
@@ -17,4 +15,9 @@ interface GitAuthApiService {
         @Field("client_secret") clientSecret: String,
         @Field("code") code: String
     ): Response<GithubAccessTokenResponse>
+
+
+    @GET("search/repositories")
+    suspend fun searchRepositories(@Query("q") query: String): Response<GithubRepoSearchResponse>
+
 }

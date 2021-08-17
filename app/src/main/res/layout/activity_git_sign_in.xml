@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".p20_git.GitActivity">
+
+     <ImageView
+         android:layout_width="50dp"
+         android:layout_height="50dp"
+         android:background="@color/transparent"
+         app:layout_constraintTop_toTopOf="parent"
+         android:scaleType="centerCrop"
+         app:layout_constraintEnd_toEndOf="parent"
+         android:src="@drawable/ic_github_logo"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintBottom_toTopOf="@id/git_button_login"
+         app:layout_constraintVertical_chainStyle="packed"
+         android:id="@+id/git_image_login"/>
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:text="@string/git_login"
+        android:layout_marginHorizontal="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/git_image_login"
+        android:id="@+id/git_button_login"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/git_image_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginTop="24dp"
+        android:id="@+id/git_progress_bar"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/git_text_progress"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:text="@string/git_loading"
+        app:layout_constraintTop_toBottomOf="@id/git_progress_bar"
+        app:layout_constraintStart_toStartOf="@id/git_progress_bar"
+        app:layout_constraintEnd_toEndOf="@id/git_progress_bar"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- P5 Picture Frame -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- P7 Recorder -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- p8 Web, p12 Book ... p20-->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- p8 Web, p12 Book ... p20 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- p15 Airbnb, p18 location -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- p18 location -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,9 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ModuleBasic"
-
         android:usesCleartextTraffic="true">
-
+        <activity
+            android:name=".p20_git.GitSearchActivity"
+            android:exported="true" />
         <activity android:name=".p1_bmi.BMIActivity" />
         <activity android:name=".p1_bmi.BMIResultActivity" />
         <activity android:name=".p2_lotto.LottoActivity" />
@@ -132,29 +133,25 @@
         <activity
             android:name=".p19_ott.OttActivity"
             android:theme="@style/AppTheme.AppBarOverlay" />
-
-
         <activity
-            android:name=".p20_git.GitActivity"
-            android:theme="@style/Theme.ModuleBasic.NoActionBar"
+            android:name=".p20_git.GitSignInActivity"
+            android:exported="true"
             android:launchMode="singleTask"
-            android:exported="true" >
-
+            android:theme="@style/Theme.ModuleBasic.NoActionBar">
             <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="github-auth"
-                    android:scheme="android-fast-campus"/>
-
-
+                    android:scheme="android-fast-campus" />
             </intent-filter>
-
-
         </activity>
-
+        <activity
+            android:name=".p20_git.GitActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
             android:name=".p23_todo.TodoActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />

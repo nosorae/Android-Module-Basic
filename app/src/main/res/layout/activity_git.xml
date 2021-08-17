@@ -1,34 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".p20_git.GitActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-     <ImageView
-         android:layout_width="50dp"
-         android:layout_height="50dp"
-         android:background="@color/transparent"
-         app:layout_constraintTop_toTopOf="parent"
-         android:scaleType="centerCrop"
-         app:layout_constraintEnd_toEndOf="parent"
-         android:src="@drawable/ic_github_logo"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintBottom_toTopOf="@id/git_button_login"
-         app:layout_constraintVertical_chainStyle="packed"
-         android:id="@+id/git_image_login"/>
-
-    <Button
-        android:layout_width="0dp"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp"
-        android:text="@string/git_login"
-        android:layout_marginHorizontal="64dp"
+        android:id="@+id/git_float_action_button_search"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/git_image_login"
-        android:id="@+id/git_button_login"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/black"
+        app:tint="@color/white"
+        android:src="@drawable/ic_search"
+        android:layout_marginBottom="32dp"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

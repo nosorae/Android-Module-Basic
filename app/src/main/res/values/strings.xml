@@ -121,6 +121,10 @@
 
     <string name="title_git">GIT</string>
     <string name="git_login">Github Login</string>
+    <string name="git_loading">로딩 중...</string>
+    <string name="git_search_hint">input keyowrd</string>
+    <string name="git_search_button">search</string>
+    <string name="git_search_empty_result_text">No Result</string>
 
     <string name="app_name">Module-Basic</string>
 
