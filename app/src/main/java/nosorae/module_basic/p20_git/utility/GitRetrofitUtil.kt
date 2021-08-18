@@ -15,6 +15,7 @@ object GitRetrofitUtil {
     val authApiService: GitAuthApiService by lazy {
         getGithubAuthRetrofit().create(GitAuthApiService::class.java)
     }
+
     private fun getGithubAuthRetrofit(): Retrofit =
         Retrofit.Builder()
             .baseUrl(GitUrl.GITHUB_URL)
@@ -27,6 +28,23 @@ object GitRetrofitUtil {
             )
             .client(buildOkHttpClient())
             .build()
+
+    val githubApiService: GithubApiService by lazy { getGithubApiService().create(GithubApiService::class.java) }
+
+    private fun getGithubApiService(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(GitUrl.GITHUB_API_URL)
+            .addConverterFactory(
+                GsonConverterFactory.create(
+                    GsonBuilder()
+                        .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                        .create()
+                )
+            )
+            .client(buildOkHttpClient())
+            .build()
+    }
+
 
 
 

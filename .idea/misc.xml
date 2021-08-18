@@ -8,11 +8,13 @@
         <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/drawable/lotto_circle_gray.xml" value="0.21296296296296297" />
         <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/drawable/ott_background_circle.xml" value="0.10648148148148148" />
         <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/layout/activity_git.xml" value="0.33" />
+        <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/layout/activity_git_repository.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/layout/activity_git_search.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/layout/activity_git_sign_in.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/layout/activity_ott.xml" value="0.1" />
         <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/layout/activity_todo.xml" value="0.20364583333333333" />
         <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/layout/item_git_search.xml" value="0.20364583333333333" />
+        <entry key="..\:/Users/11260/AndroidStudioProjects/Android-Module-Basic/app/src/main/res/layout/item_location.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>

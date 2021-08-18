@@ -64,7 +64,18 @@ import kotlin.coroutines.CoroutineContext
  * app:drawableStartCompat
  *      you can put image resource inside in front of the text
  *
+ * ?: kotlin.run 으로 null 에 대한 처리를 스코프안에다 해줄 수 있다.
  *
+ * implementation 'jp.wasabeef:glide-transformations:4.0.0' 이미지를 둥근 사각형으로 만들기 위해 추가
+ *
+ * 아무리 코틀린에서 거의 모든 문법에 반환값이 있다지만 파라미터 전달에도 if else 문을 쓸 수 있구나 중복되는 코드양이 줄어들어서 좋다.
+ *  binding.gitRepoButtonLike.setImageDrawable(ContextCompat.getDrawable(this,
+        if (isLike) {
+            R.drawable.ic_favorite
+        } else {
+            R.drawable.ic_favorite_boarder
+        }
+    ))
  *
  *
  *

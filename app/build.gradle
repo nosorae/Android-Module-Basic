@@ -72,6 +72,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2' // p18 location 로깅
     implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library, p15 airbnb, p17 music
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' //p12 library 강의에서는 이건 안했다.
+    implementation 'jp.wasabeef:glide-transformations:4.0.0'
 
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database-ktx'

@@ -125,6 +125,7 @@
     <string name="git_search_hint">input keyowrd</string>
     <string name="git_search_button">search</string>
     <string name="git_search_empty_result_text">No Result</string>
+    <string name="git_search_empty_favorite_result">찜한 Repository 가 없습니다.</string>
 
     <string name="app_name">Module-Basic</string>
 

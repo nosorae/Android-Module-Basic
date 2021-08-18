@@ -17,7 +17,6 @@ interface GitAuthApiService {
     ): Response<GithubAccessTokenResponse>
 
 
-    @GET("search/repositories")
-    suspend fun searchRepositories(@Query("q") query: String): Response<GithubRepoSearchResponse>
+
 
 }

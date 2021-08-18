@@ -17,9 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ModuleBasic"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".p20_git.GitSearchActivity"
-            android:exported="true" />
+
         <activity android:name=".p1_bmi.BMIActivity" />
         <activity android:name=".p1_bmi.BMIResultActivity" />
         <activity android:name=".p2_lotto.LottoActivity" />
@@ -152,6 +150,15 @@
         <activity
             android:name=".p20_git.GitActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
+
+        <activity
+            android:name=".p20_git.GitRepositoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".p20_git.GitSearchActivity"
+            android:exported="true" />
+
+
         <activity
             android:name=".p23_todo.TodoActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
