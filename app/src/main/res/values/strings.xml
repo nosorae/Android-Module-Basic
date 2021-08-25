@@ -127,7 +127,15 @@
     <string name="git_search_empty_result_text">No Result</string>
     <string name="git_search_empty_favorite_result">찜한 Repository 가 없습니다.</string>
 
+
+
+    <string name="title_dust">Dust</string>
+    <string name="dust_additional_information">자료 출처 : 환경부/한국환경공단\n 해당 기관이 제공하는 자료는 인증을 받지 않은 실시간 자료 이므로 자료 및 표출방식에 따라 값이 다를 수 있음 </string>
+    <string name="dust_error">예기치 못한 문제가 발생했습니다. 잠시 후 다시 시도해주세요.</string>
+
     <string name="app_name">Module-Basic</string>
+
+
 
 
 </resources>

@@ -17,6 +17,7 @@ import nosorae.module_basic.p18_location.LocationSearchActivity
 import nosorae.module_basic.p19_ott.OttActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
 import nosorae.module_basic.p20_git.GitSignInActivity
+import nosorae.module_basic.p21_dust.DustActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
 import nosorae.module_basic.p4_calculator.CalculatorActivity
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         startProject(binding.buttonLocation, LocationSearchActivity::class.java)
         startProject(binding.buttonOtt, OttActivity::class.java)
         startProject(binding.buttonGit, GitSignInActivity::class.java)
+        startProject(binding.buttonDust, DustActivity::class.java)
 
     }
     private fun startProject(button: Button, activity: Class<*>) {
@@ -84,9 +86,15 @@ values 여러 값들을 저장해서 하드코딩을 방지?
 Gradle Scripts
 각종 앱에관한 설정들
 
+drawableStartCompat 에서 Compat 으로 쓰는 이유? 벡터 이미지 넣을 때 호환성이 필요해서
+
 단축키
 리포맷 코드 : ctrl + alt + l
 빌드 : shift + f10
 자동 import : alt + enter
 함수만들기 Extract Function : 범위지정 -> ctrl + alt + m (우클릭 -> Refactor -> Function..)
+
+Color Tool
+https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=607D8B
+
  */

@@ -22,6 +22,8 @@ android {
 
         buildConfigField "String", "GITHUB_CLIENT_ID", project.properties["GITHUB_CLIENT_ID"]
         buildConfigField "String", "GITHUB_CLIENT_SECRET", project.properties["GITHUB_CLIENT_SECRET"]
+        buildConfigField "String", "KAKAO_API_KEY", project.properties["KAKAO_API_KEY"]
+        buildConfigField "String", "AIR_KOREA_SERVICE_KEY", project.properties["AIR_KOREA_SERVICE_KEY"]
     }
 
     buildTypes {
@@ -70,6 +72,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //p12 library, p15 airbnb, p16 youtube, p17 music, p18 location
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2' // p18 location
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2' // p18 location 로깅
+
+
     implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library, p15 airbnb, p17 music
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' //p12 library 강의에서는 이건 안했다.
     implementation 'jp.wasabeef:glide-transformations:4.0.0'
@@ -97,6 +101,10 @@ dependencies {
 
     implementation 'androidx.preference:preference-ktx:1.1.1'
 
+    implementation 'com.google.android.gms:play-services-location:18.0.0' // p21
 
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0' // p21
+    implementation 'androidx.lifecycle:lifecycle-service:2.4.0-alpha03' // p21
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
 
 }

@@ -5,9 +5,11 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- P5 Picture Frame -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- P7 Recorder -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- p8 Web, p12 Book ... p20 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- p15 Airbnb, p18 location -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- p18 location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- p15 Airbnb, p18 location, p21-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- p18 location, p21 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/> <!-- p21 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/> <!--  p21 런타임요청필요x-->
 
     <application
         android:allowBackup="true"
@@ -157,6 +159,22 @@
         <activity
             android:name=".p20_git.GitSearchActivity"
             android:exported="true" />
+
+        <activity android:name=".p21_dust.DustActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.ModuleBasic.Dust"/>
+
+        <receiver android:name=".p21_dust.appwidget.DustSimpleWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_dust_simple_info"/>
+        </receiver>
+
+        <service android:name=".p21_dust.appwidget.DustSimpleWidgetProvider$UpdateWidgetService"
+            android:foregroundServiceType="location"/>
+        
 
 
         <activity

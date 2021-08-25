@@ -43,6 +43,12 @@
     <color name="ott_blue">#0000FF</color>
     <color name="ott_green">#00FF00</color>
 
+    <color name="dust_blue">#1565c0</color>
+    <color name="dust_green">#2e7d32</color>
+    <color name="dust_yellow">#f9a825</color>
+    <color name="dust_red">#c62828</color>
+    <color name="dust_gray">#424242</color>
+
 
 
 
