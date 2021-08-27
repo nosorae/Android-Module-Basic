@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="6dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_unsplash_photo_content_container"
+            android:layout_width="match_parent"
+            tools:layout_height="500dp"
+            android:layout_height="0dp">
+
+            <ImageView
+                android:id="@+id/item_unsplash_photo_image_view"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@color/teal_200"
+                tools:ignore="ContentDescription"
+                 />
+
+            <ImageView
+                android:id="@+id/item_unsplash_photo_profile_image_view"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:background="@color/white"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/item_unsplash_photo_author_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:shadowColor="#60000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@id/item_unsplash_photo_description_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/item_unsplash_photo_profile_image_view"
+                app:layout_constraintTop_toTopOf="@id/item_unsplash_photo_profile_image_view"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="작가 이름" />
+
+            <TextView
+                android:id="@+id/item_unsplash_photo_description_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:shadowColor="#60000000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="5"
+                android:textSize="12sp"
+                android:alpha="0.8"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/item_unsplash_photo_profile_image_view"
+                app:layout_constraintEnd_toEndOf="@id/item_unsplash_photo_author_text"
+                app:layout_constraintStart_toStartOf="@id/item_unsplash_photo_author_text"
+                app:layout_constraintTop_toBottomOf="@id/item_unsplash_photo_author_text"
+                tools:text="사진 설명" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</FrameLayout>

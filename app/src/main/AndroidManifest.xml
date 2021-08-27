@@ -10,6 +10,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/> <!-- p21 -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/> <!--  p21 런타임요청필요x-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" /> <!-- p22 -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER"/>
 
     <application
         android:allowBackup="true"
@@ -174,6 +177,11 @@
 
         <service android:name=".p21_dust.appwidget.DustSimpleWidgetProvider$UpdateWidgetService"
             android:foregroundServiceType="location"/>
+
+        <activity android:name=".p22_unsplash.UnsplashActivity"
+            android:theme="@style/Theme.ModuleBasic.NoActionBar"
+            android:screenOrientation="portrait"
+            />
         
 
 

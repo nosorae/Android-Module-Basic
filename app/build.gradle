@@ -24,6 +24,7 @@ android {
         buildConfigField "String", "GITHUB_CLIENT_SECRET", project.properties["GITHUB_CLIENT_SECRET"]
         buildConfigField "String", "KAKAO_API_KEY", project.properties["KAKAO_API_KEY"]
         buildConfigField "String", "AIR_KOREA_SERVICE_KEY", project.properties["AIR_KOREA_SERVICE_KEY"]
+        buildConfigField "String", "UNSPLASH_ACCESS_KEY", project.properties["UNSPLASH_ACCESS_KEY"]
     }
 
     buildTypes {
@@ -67,15 +68,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx' // p9 push
     implementation 'com.google.firebase:firebase-config-ktx' // p10 quote
 
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0' //p12 library, p15 airbnb, p16 youtube, p17 music, p18 location
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' //p12 library, p15 airbnb, p16 youtube, p17 music, p18 location, ... , p22,
     // 서버에서 가져온 String 형태의 json 을 gson 으로 변환하는 걸 도와주는 gson 라이브러리도 추가
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //p12 library, p15 airbnb, p16 youtube, p17 music, p18 location
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' //p12 library, p15 airbnb, p16 youtube, p17 music, p18 location, ... , p22
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2' // p18 location
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2' // p18 location 로깅
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2' // p18 location 로깅, p22
 
 
-    implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library, p15 airbnb, p17 music
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' //p12 library 강의에서는 이건 안했다.
+    implementation 'com.github.bumptech.glide:glide:4.12.0' //p12 library, p15 airbnb, p17 music, p22
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0' //p12 library 강의에서는 이건 안했다., p22
     implementation 'jp.wasabeef:glide-transformations:4.0.0'
 
     implementation 'com.google.firebase:firebase-auth-ktx'
@@ -91,8 +92,8 @@ dependencies {
 
     implementation 'com.google.android.exoplayer:exoplayer:2.15.0' // p16 youtube p17 music
 
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0' // p22
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0' // p22
     //implementatoin 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.9' 강사님은 추가하셨는데 에러가난다. 공식문서에도 이거는 없다.
 
     implementation 'com.google.android.gms:play-services-maps:17.0.1' // p18 location
@@ -106,5 +107,7 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0' // p21
     implementation 'androidx.lifecycle:lifecycle-service:2.4.0-alpha03' // p21
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0' // p22
 
 }

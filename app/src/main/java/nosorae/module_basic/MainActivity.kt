@@ -18,6 +18,7 @@ import nosorae.module_basic.p19_ott.OttActivity
 import nosorae.module_basic.p1_bmi.BMIActivity
 import nosorae.module_basic.p20_git.GitSignInActivity
 import nosorae.module_basic.p21_dust.DustActivity
+import nosorae.module_basic.p22_unsplash.UnsplashActivity
 import nosorae.module_basic.p2_lotto.LottoActivity
 import nosorae.module_basic.p3_diary.DiaryActivity
 import nosorae.module_basic.p4_calculator.CalculatorActivity
@@ -62,6 +63,7 @@ class MainActivity : AppCompatActivity() {
         startProject(binding.buttonOtt, OttActivity::class.java)
         startProject(binding.buttonGit, GitSignInActivity::class.java)
         startProject(binding.buttonDust, DustActivity::class.java)
+        startProject(binding.buttonUnsplash, UnsplashActivity::class.java)
 
     }
     private fun startProject(button: Button, activity: Class<*>) {
@@ -96,5 +98,7 @@ drawableStartCompat 에서 Compat 으로 쓰는 이유? 벡터 이미지 넣을 
 
 Color Tool
 https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=607D8B
+
+TODO ListAdapter 동작원리 알아보기
 
  */

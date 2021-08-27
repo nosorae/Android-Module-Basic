@@ -143,6 +143,11 @@
              android:layout_height="wrap_content"
              android:text="@string/title_dust" />
 
+         <Button
+             android:layout_width="match_parent"
+             android:id="@+id/button_unsplash"
+             android:text="@string/title_unsplash"
+             android:layout_height="wrap_content"/>
       </LinearLayout>
    </ScrollView>
 

@@ -1,10 +1,9 @@
-package nosorae.module_basic.p21_dust.data.service
+package nosorae.module_basic.p21_dust.data.services
 
 import nosorae.module_basic.BuildConfig
 import nosorae.module_basic.p21_dust.data.models.tmcoordinates.TmCoordinatesResponse
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.Query
 

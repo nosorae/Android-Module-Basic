@@ -3,8 +3,8 @@ package nosorae.module_basic.p21_dust.data
 import nosorae.module_basic.BuildConfig
 import nosorae.module_basic.p21_dust.data.models.airquality.MeasuredValue
 import nosorae.module_basic.p21_dust.data.models.monitoringstation.MonitoringStation
-import nosorae.module_basic.p21_dust.data.service.AirKoreaApiService
-import nosorae.module_basic.p21_dust.data.service.KakaoLocalApiService
+import nosorae.module_basic.p21_dust.data.services.AirKoreaApiService
+import nosorae.module_basic.p21_dust.data.services.KakaoLocalApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

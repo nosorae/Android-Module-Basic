@@ -1,4 +1,4 @@
-package nosorae.module_basic.p21_dust.data.service
+package nosorae.module_basic.p21_dust.data.services
 
 import retrofit2.Response
 import nosorae.module_basic.BuildConfig
