@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nosorae.module_basic">
+    package="nosorae.changed_name">
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- P5 Picture Frame -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" /> <!-- P7 Recorder -->
@@ -23,54 +23,54 @@
         android:theme="@style/Theme.ModuleBasic"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".p1_bmi.BMIActivity" />
-        <activity android:name=".p1_bmi.BMIResultActivity" />
-        <activity android:name=".p2_lotto.LottoActivity" />
+        <activity android:name="nosorae.changed_name.p1_bmi.BMIActivity" />
+        <activity android:name="nosorae.changed_name.p1_bmi.BMIResultActivity" />
+        <activity android:name="nosorae.changed_name.p2_lotto.LottoActivity" />
         <activity
-            android:name=".p3_diary.DiaryActivity"
+            android:name="nosorae.changed_name.p3_diary.DiaryActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p3_diary.DiaryResultActivity"
+            android:name="nosorae.changed_name.p3_diary.DiaryResultActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p4_calculator.CalculatorActivity"
+            android:name="nosorae.changed_name.p4_calculator.CalculatorActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p5_picture_frame.PictureFrameActivity"
+            android:name="nosorae.changed_name.p5_picture_frame.PictureFrameActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p5_picture_frame.PictureFrameResultActivity"
+            android:name="nosorae.changed_name.p5_picture_frame.PictureFrameResultActivity"
             android:screenOrientation="landscape"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p6_pomodoro.PomodoroActivity"
+            android:name="nosorae.changed_name.p6_pomodoro.PomodoroActivity"
             android:theme="@style/Theme.ModuleBasic.Pomodoro" />
         <activity
-            android:name=".p7_recorder.RecorderActivity"
+            android:name="nosorae.changed_name.p7_recorder.RecorderActivity"
             android:theme="@style/Theme.ModuleBasic.Recorder" />
         <activity
-            android:name=".p8_web.WebActivity"
+            android:name="nosorae.changed_name.p8_web.WebActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p9_push.PushActivity"
+            android:name="nosorae.changed_name.p9_push.PushActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p10_quote.QuoteActivity"
+            android:name="nosorae.changed_name.p10_quote.QuoteActivity"
             android:theme="@style/Theme.ModuleBasic.Quote" />
         <activity
-            android:name=".p11_alarm.AlarmActivity"
+            android:name="nosorae.changed_name.p11_alarm.AlarmActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p12_book.BookActivity"
+            android:name="nosorae.changed_name.p12_book.BookActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p12_book.BookDetailActivity"
+            android:name="nosorae.changed_name.p12_book.BookDetailActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p13_tinder.TinderActivity"
+            android:name="nosorae.changed_name.p13_tinder.TinderActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p13_tinder.TinderLoginActivity"
+            android:name="nosorae.changed_name.p13_tinder.TinderLoginActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
         <meta-data
@@ -94,22 +94,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".p13_tinder.TinderLikeActivity"
+            android:name="nosorae.changed_name.p13_tinder.TinderLikeActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p13_tinder.TinderMatchedUserActivity"
+            android:name="nosorae.changed_name.p13_tinder.TinderMatchedUserActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p14_market.MarketActivity"
+            android:name="nosorae.changed_name.p14_market.MarketActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p14_market.home.MarketAddArticleActivity"
+            android:name="nosorae.changed_name.p14_market.home.MarketAddArticleActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p14_market.chatDetail.MarketChatRoomActivity"
+            android:name="nosorae.changed_name.p14_market.chatDetail.MarketChatRoomActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p15_airbnb.AirActivity"
+            android:name="nosorae.changed_name.p15_airbnb.AirActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
         <meta-data
@@ -117,16 +117,16 @@
             android:value="@string/naverMapAPIKey" />
 
         <activity
-            android:name=".p16_youtube.YoutubeActivity"
+            android:name="nosorae.changed_name.p16_youtube.YoutubeActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p17_music.MusicActivity"
+            android:name="nosorae.changed_name.p17_music.MusicActivity"
             android:theme="@style/Theme.ModuleBasic.Music" />
         <activity
-            android:name=".p18_location.LocationActivity"
+            android:name="nosorae.changed_name.p18_location.LocationActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
         <activity
-            android:name=".p18_location.LocationSearchActivity"
+            android:name="nosorae.changed_name.p18_location.LocationSearchActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
         <meta-data
@@ -134,10 +134,10 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".p19_ott.OttActivity"
+            android:name="nosorae.changed_name.p19_ott.OttActivity"
             android:theme="@style/AppTheme.AppBarOverlay" />
         <activity
-            android:name=".p20_git.GitSignInActivity"
+            android:name="nosorae.changed_name.p20_git.GitSignInActivity"
             android:exported="true"
             android:launchMode="singleTask"
             android:theme="@style/Theme.ModuleBasic.NoActionBar">
@@ -153,21 +153,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".p20_git.GitActivity"
+            android:name="nosorae.changed_name.p20_git.GitActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
 
         <activity
-            android:name=".p20_git.GitRepositoryActivity"
+            android:name="nosorae.changed_name.p20_git.GitRepositoryActivity"
             android:exported="true" />
         <activity
-            android:name=".p20_git.GitSearchActivity"
+            android:name="nosorae.changed_name.p20_git.GitSearchActivity"
             android:exported="true" />
 
-        <activity android:name=".p21_dust.DustActivity"
+        <activity android:name="nosorae.changed_name.p21_dust.DustActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ModuleBasic.Dust"/>
 
-        <receiver android:name=".p21_dust.appwidget.DustSimpleWidgetProvider">
+        <receiver android:name="nosorae.changed_name.p21_dust.appwidget.DustSimpleWidgetProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -175,10 +175,10 @@
                 android:resource="@xml/widget_dust_simple_info"/>
         </receiver>
 
-        <service android:name=".p21_dust.appwidget.DustSimpleWidgetProvider$UpdateWidgetService"
+        <service android:name="nosorae.changed_name.p21_dust.appwidget.DustSimpleWidgetProvider$UpdateWidgetService"
             android:foregroundServiceType="location"/>
 
-        <activity android:name=".p22_unsplash.UnsplashActivity"
+        <activity android:name="nosorae.changed_name.p22_unsplash.UnsplashActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar"
             android:screenOrientation="portrait"
             />
@@ -186,9 +186,9 @@
 
 
         <activity
-            android:name=".p23_todo.TodoActivity"
+            android:name="nosorae.changed_name.p23_todo.TodoActivity"
             android:theme="@style/Theme.ModuleBasic.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name="nosorae.changed_name.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -197,7 +197,7 @@
         </activity>
 
         <service
-            android:name=".p9_push.MyFirebaseMessagingService"
+            android:name="nosorae.changed_name.p9_push.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -205,7 +205,7 @@
         </service>
 
         <receiver
-            android:name=".p11_alarm.AlarmReceiver"
+            android:name="nosorae.changed_name.p11_alarm.AlarmReceiver"
             android:exported="false" />
     </application>
 

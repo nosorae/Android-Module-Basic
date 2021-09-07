@@ -13,7 +13,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "nosorae.module_basic"
+        applicationId "nosorae.changed_name"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
@@ -39,6 +39,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+    repositories {
+        mavenCentral()
     }
     // p12 Book View Binding 부터 활성화
     viewBinding {
@@ -109,5 +112,15 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
 
     implementation 'com.facebook.shimmer:shimmer:0.5.0' // p22
+
+    def koin_version = '3.1.2'
+    implementation "io.insert-koin:koin-android:$koin_version"// p23
+    // Koin for Android - Scope feature
+    implementation "io.insert-koin:koin-android-viewmodel:$koin_version"
+    // Koin testing tools
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+    // Needed JUnit version
+    testImplementation "io.insert-koin:koin-test-junit4:$koin_version"
+
 
 }

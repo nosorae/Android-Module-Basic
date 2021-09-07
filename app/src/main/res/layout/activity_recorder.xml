@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".p7_recorder.RecorderActivity">
-    <nosorae.module_basic.p7_recorder.SoundVisualizerView
+    <nosorae.changed_name.p7_recorder.SoundVisualizerView
         android:id="@+id/recorder_sound_visualizer_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -26,7 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/recorder_button" />
 
-    <nosorae.module_basic.p7_recorder.CountUpTextView
+    <nosorae.changed_name.p7_recorder.CountUpTextView
         android:id="@+id/recorder_text_view_record_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="@id/recorder_button"
         app:layout_constraintStart_toStartOf="@id/recorder_button" />
 
-    <nosorae.module_basic.p7_recorder.RecorderButton
+    <nosorae.changed_name.p7_recorder.RecorderButton
         android:id="@+id/recorder_button"
         android:layout_width="100dp"
         android:layout_height="100dp"
